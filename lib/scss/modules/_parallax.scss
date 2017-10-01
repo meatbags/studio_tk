@@ -1,0 +1,23 @@
+.parallax {
+	transition: $transitionSlow;
+}
+
+.parallax-once {
+	
+}
+
+.parallax-fade {
+	opacity: 0;
+	
+	&.active {
+		opacity: 1;
+	}
+}
+
+.parallax-rise {
+	transform: translateY($spaceLarge);
+	
+	&.active {
+		transform: translateY(0);
+	}
+}

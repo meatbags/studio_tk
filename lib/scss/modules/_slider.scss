@@ -1,0 +1,44 @@
+$gradStart: rgba(0, 0, 0, 0);
+$gradEnd: rgba(0, 0, 0, 1);
+
+.slider {
+	.slide {
+		height: 400px;
+		width: 33vw;
+		border: 1px solid black;
+		outline: none !important;
+	}
+	
+	@media screen and (max-width: $tablet) {
+		.slide {
+			width: 60vw;
+		}
+	}
+}
+
+.slick-prev, .slick-next {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100px;
+	z-index: $indexSliderButton;
+	border: none;
+	outline: none !important;
+	opacity: 0.5;
+	transition: $transitionNormal;
+	
+	&:hover {
+		cursor: pointer;
+		opacity: 1;
+	}
+}
+
+.slick-prev {
+	left: 0;
+	background: linear-gradient(270deg, $gradStart, $gradEnd);
+}
+
+.slick-next {
+	right: 0;
+	background: linear-gradient(90deg, $gradStart, $gradEnd);
+}
