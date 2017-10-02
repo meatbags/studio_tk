@@ -1,13 +1,10 @@
-<?php get_header(); ?>
-
-<?php
-
+<?php get_header();
 	while ( have_posts() ) : the_post();
 		the_content();
 	endwhile;
 ?>
 
-[ stories will load here ]
+{ editorials }
 
 <div class='grid'>
 	<div class='grid__item-half'></div>

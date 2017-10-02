@@ -1,1 +1,3 @@
-{ graphic }
+<div class='landing'>
+  
+</div>

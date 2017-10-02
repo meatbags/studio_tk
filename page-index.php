@@ -7,7 +7,7 @@
 	endwhile;
 ?>
 
-[ projects will load here ]
+{ index }
 
 <div class='grid'>
 	<div class='grid__item-half'></div>
