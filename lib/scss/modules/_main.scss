@@ -1,34 +1,10 @@
 .content {
 	width: 100%;
-	
+
 	.wrapper {
 		padding: $space;
 		width: 100%;
 		margin: 0 auto;
 		min-height: 100vh;
 	}
-}
-
-.landing {
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: 1px solid black;
-}
-
-.featured-articles {
-	width: 100%;
-}
-
-.text-area {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	padding: $space;
-}
-
-.featured-slider {
-	width: 100%;
 }

@@ -1,53 +1,52 @@
 <?php
 
-// ajax
-
 function ajax_load(){
-    header("Content-Type: application/json");
+  header("Content-Type: application/json");
 
 	$value = (isset($_POST['value'])) ? $_POST['value'] : 0;
 	$output = array('content' => '', 'complete' => false);
-	
+
 	// do stuff
-    // $loop = new WP_Query(array());
+  // $loop = new WP_Query(array());
 	// wp_reset_postdata();
-	
+
 	die(json_encode($output));
 }
 add_action('wp_ajax_nopriv_ajax_load', 'ajax_load');
 add_action('wp_ajax_ajax_load', 'ajax_load');
 
-// setup
-
 function teuber_setup()
 {
-	add_theme_support( 'title-tag' );
-	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support('title-tag');
+	add_theme_support('automatic-feed-links');
+	add_theme_support('post-thumbnails');
 }
-add_action( 'after_setup_theme', 'teuber_setup' );
+add_action('after_setup_theme', 'teuber_setup');
 
-// customise admin
+function remove_admin_post_types() {
+  remove_menu_page('edit.php'); // posts
+  remove_menu_page('edit-comments.php');
+}
+add_action('admin_menu', 'remove_admin_post_types');
 
 function add_admin_post_types() {
-	register_post_type('stories', array(
-		'label' => 'Stories',
+	register_post_type('index', array(
+		'label' => 'Index',
 		'public' => true,
 		'capability_type' => 'post',
 		'hierarchical' => true,
-		'rewrite' => array('slug' => 'stories'),
+		'rewrite' => array('slug' => 'index'),
 		'query_var' => true,
 		'menu_icon' => 'dashicons-format-aside',
 		'taxonomies' => array('category', 'post_tag'),
 		'supports' => array('title', 'editor', 'revisions', 'thumbnail')
 	));
-	
-	register_post_type('projects', array(
-		'label' => 'Projects',
+	register_post_type('editorials', array(
+		'label' => 'Editorials',
 		'public' => true,
 		'capability_type' => 'post',
 		'hierarchical' => true,
-		'rewrite' => array('slug' => 'projects'),
+		'rewrite' => array('slug' => 'editorials'),
 		'query_var' => true,
 		'menu_icon' => 'dashicons-format-aside',
 		'taxonomies' => array('category', 'post_tag'),
@@ -55,8 +54,6 @@ function add_admin_post_types() {
 	));
 }
 add_action('init', 'add_admin_post_types');
-
-// defaults
 
 add_action( 'comment_form_before', 'teuber_enqueue_comment_reply_script' );
 function teuber_enqueue_comment_reply_script()
@@ -97,33 +94,29 @@ function teuber_custom_pings( $comment )
 	$GLOBALS['comment'] = $comment;
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
-	<?php 
+	<?php
 }
 
-// login logo
 
-function my_login_logo_one() { 
-
-?> 
-	<style type="text/css"> 
+function my_login_logo_one() {
+?>
+	<style type="text/css">
 	body.login div#login h1 a {
 		background-image: url();
 	}
 	body.login div#login h1:after {
-		content: "TEUBER | KOHLHOFF"	
+		content: "TEUBER | KOHLHOFF"
 	}
 	</style>
-<?php 
+<?php
 } add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
 
-
-// scripts & styles
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 add_action( 'wp_enqueue_scripts', 'teuber_load_scripts' );
 function teuber_load_scripts()
-{	
+{
 	// remove woo styles
 	wp_enqueue_script( 'teuberscript', get_stylesheet_directory_uri() . '/lib/js/build/app.min.js');
 	wp_register_style( 'teuberstyle', get_stylesheet_directory_uri() . '/lib/css/style.css' );
@@ -131,4 +124,3 @@ function teuber_load_scripts()
 	wp_enqueue_style( 'teuberstyle' );
 	wp_enqueue_style( 'fontawesome' );
 }
-
