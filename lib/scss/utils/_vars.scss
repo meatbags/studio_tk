@@ -7,12 +7,14 @@ $lightGrey: #ccc;
 
 $colourPrimary: $black;
 $colourBackground: $white;
+$colourAlt: #6ca98d;
 
 // spacing
 
 $space: 10px;
 $spaceLarge: $space * 4;
-$navSize: 60px;
+$sizeNav: 40px;
+$sizeFooter: 40px;
 
 // breakpoints
 
@@ -23,8 +25,9 @@ $small: 480px;
 
 // transitions
 
-$transitionNormal: 0.3s;
-$transitionSlow: 0.6s;
+$transitionFast: 0.25s;
+$transitionNormal: 0.5s;
+$transitionSlow: 0.75s;
 
 // z index
 
@@ -37,4 +40,4 @@ $indexMobileNavButton: 91;
 // type
 
 $fontStack: 'Arial', sans-serif;
-$fontSize: 16px;
+$fontSize: 14px;

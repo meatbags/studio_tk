@@ -1,11 +1,11 @@
-{ editorials }
+<!-- front page editorials grid -->
 
-<div class='slider'>
+<div class='grid editorials-grid'>
 	<?php
-		$query = new WP_Query( array(
+		$query = new WP_Query(array(
 			'post_type' => 'editorials',
 			'orderby' => 'menu_order',
-			'posts_per_page' => -1
+			'posts_per_page' => 2
 		));
 
 		if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
@@ -15,10 +15,10 @@
 			$link = get_the_permalink();
 	?>
 
-	<div class='slide'>
+	<div class='grid__full grid__item'>
 		<a href='<?php echo $link; ?>'>
 			<?php
-				echo $title . '<br>';
+				echo $title;
 				echo $excerpt;
 			?>
 		</a>

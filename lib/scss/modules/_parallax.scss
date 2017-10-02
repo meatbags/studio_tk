@@ -3,21 +3,21 @@
 }
 
 .parallax-once {
-	
+
 }
 
 .parallax-fade {
 	opacity: 0;
-	
-	&.active {
+
+	&.parallax-active {
 		opacity: 1;
 	}
 }
 
 .parallax-rise {
 	transform: translateY($spaceLarge);
-	
-	&.active {
+
+	&.parallax-active {
 		transform: translateY(0);
 	}
 }
