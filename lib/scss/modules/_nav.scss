@@ -2,16 +2,18 @@
 	@extend .noselect;
 	height: $sizeNav;
 	width: 100%;
-	transition: $transition;
+	//transition: $transition;
 	//background: $colourBackground;
 	z-index: $indexNav;
+	position: fixed;
+	top: 0;
 
 	.nav__list {
 		width: 100%;
 		height: 100%;
 		padding-top: $space;
-		padding-left: $space * 2;
-		padding-right: $space * 2;
+		padding-left: $space3;
+		padding-right: $space3;
 
 		.nav__list__item {
 			display: inline-block;
@@ -25,25 +27,73 @@
 			}
 
 			&:nth-child(1) {
-				margin-right: $space * 2;
+				margin-right: $space3;
 			}
 		}
 	}
 
 	&.nav-index {
-		position: fixed;
-		top: -$sizeNav;
+		position: absolute;
+		top: 100vh;//-$sizeNav;
 		left: 0;
-		opacity: 0;
 	}
 
 	&.nav-index.active {
+		position: fixed;
 		top: 0;
-		opacity: 1;
 	}
 
 	&.inverted {
 		color: $colourBackground;
+	}
+}
+
+.menu {
+	padding-top: $space3;
+	position: fixed;
+	width: 49vw;
+	height: 100vh;
+	top: 0;
+	right: 0;
+	background: $colourBackground;
+	z-index: $indexMenu;
+	font-size: $fontSizeHuge;
+	transform: translateX(50vw);
+	transition: transform $transition;
+
+	.menu__list {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+
+		.item {
+			margin-left: $space2;
+			border-bottom: $border;
+			padding: $space;
+			padding-left: $space3;
+			padding-right: 0;
+		}
+	}
+
+	&.open {
+		transform: translateX(0);
+	}
+
+	&.menu-index {
+		position: absolute;
+		top: 100vh;
+	}
+
+	&.menu-index.active {
+		position: fixed;
+		top: 0;
+	}
+
+	&.inverted {
+		color: $colourBackground;
+		background: $colourAlt;
 	}
 }
 

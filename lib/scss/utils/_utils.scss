@@ -66,7 +66,23 @@
 }
 
 .border-left {
-	border-left: 1px solid black;
+	border-left: $border;
+}
+
+.border-bottom {
+	border-bottom: $border;
+}
+
+.padding-left {
+	padding-left: $space;
+}
+
+.padding-top {
+	padding-top: $space;
+}
+
+.padding-bottom {
+	padding-bottom: $space;
 }
 
 .reveal {
@@ -75,4 +91,8 @@
 	&.active {
 		opacity: 1;
 	}
+}
+
+.clickable {
+	cursor: pointer;
 }

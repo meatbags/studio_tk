@@ -15,7 +15,7 @@
 }
 
 .parallax-rise {
-	transform: translateY($spaceLarge);
+	transform: translateY($space4);
 
 	&.parallax-active {
 		transform: translateY(0);

@@ -1,6 +1,6 @@
 <!-- editorials grid -->
 
-<div class='grid editorials-grid trigger' data-title='EDITORIALS'>
+<div class='grid editorials-grid trigger' data-title='EDITORIALS' data-invert='true'>
 	<?php
 		$query = new WP_Query(array(
 			'post_type' => 'editorials',

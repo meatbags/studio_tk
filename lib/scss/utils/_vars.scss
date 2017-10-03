@@ -3,14 +3,17 @@ $white: #fff;
 $black: #000;
 $grey: #888;
 $green: #6ca98d;
-$lightGrey: #ccc;
+$lightGrey: #fafafa;
 $colourPrimary: $black;
 $colourBackground: $white;
 $colourAlt: $green;
 
 // spacing
-$space: 16px;
-$spaceLarge: $space * 4;
+$space: 18px;
+$space2: $space * 2;
+$space3: $space * 3;
+$space4: $space * 4;
+$space6: $space * 6;
 $sizeNav: 40px;
 $sizeFooter: 40px;
 
@@ -33,6 +36,7 @@ $transitionSlow: 0.75s;
 $indexLoading: 100;
 $indexSliderButton: 10;
 $indexNav: 90;
+$indexMenu: 89;
 $indexMobileNav: 90;
 $indexMobileNavButton: 91;
 
@@ -41,5 +45,5 @@ $fontStack: 'Roboto', sans-serif;
 $fontSize: 14px;
 $fontSizeSmall: 11px;
 $fontSizeMedium: 21px;
-$fontSizeLarge: 28px;
+$fontSizeLarge: 42px;
 $fontSizeHuge: 68px;

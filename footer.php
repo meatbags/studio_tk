@@ -7,10 +7,17 @@
 			&copy; 2017 TEUBER KOHLHOFF I ALL RIGHTS RESERVED
 		</div>
 		<div class='grid__third text-centre' id="copyright">
-			SHOP I INDEX I EDITORIAL I INFO I INSTAGRAM I FACEBOOK
+			<a href='<?php echo get_site_url(); ?>/shop/'>SHOP</a> I
+			<a href='<?php echo get_site_url(); ?>/index/'>INDEX</a> I
+			<a href='<?php echo get_site_url(); ?>/editorials/'>EDITORIAL</a> I
+			<a href='<?php echo get_site_url(); ?>/info/'>INFO</a> I
+			<a target='_blank' href='https://www.instagram.com/teuberkohlhoff/'>INSTAGRAM</a> I
+			<a target='_blank' href='https://www.facebook.com/teuberkohlhoff/'>FACEBOOK</a>
 		</div>
 		<div class='grid__third text-right' id="copyright">
-			IMPRINT I DELIVERY INFORMATION I TERMS & CONDITIONS
+			<a href='<?php echo get_site_url(); ?>/info/'>IMPRINT</a> I
+			<a href='<?php echo get_site_url(); ?>/info/'>DELIVERY INFORMATION</a> I
+			<a href='<?php echo get_site_url(); ?>/info/'>TERMS & CONDITIONS</a>
 		</div>
 		<?php //get_search_form(); ?>
 	</div>

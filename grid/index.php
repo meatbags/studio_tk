@@ -1,6 +1,6 @@
 <!-- index grid -->
 
-<div class='grid index-grid trigger' data-title='INDEX'>
+<div class='grid index-grid trigger <?php if (is_home()) { echo 'home-margin'; } ?>' data-title='INDEX'>
 	<?php
 		$count = 0;
 		$load = (is_home() ? 6 : -1);
