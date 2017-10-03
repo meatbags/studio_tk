@@ -1,36 +1,31 @@
-// colours
-
+// colour
 $white: #fff;
 $black: #000;
 $grey: #888;
+$green: #6ca98d;
 $lightGrey: #ccc;
-
 $colourPrimary: $black;
 $colourBackground: $white;
-$colourAlt: #6ca98d;
+$colourAlt: $green;
 
 // spacing
-
 $space: 10px;
 $spaceLarge: $space * 4;
 $sizeNav: 40px;
 $sizeFooter: 40px;
 
 // breakpoints
-
 $large: 1200px;
 $tablet: 960px;
 $mobile: 700px;
 $small: 480px;
 
 // transitions
-
 $transitionFast: 0.25s;
 $transitionNormal: 0.5s;
 $transitionSlow: 0.75s;
 
 // z index
-
 $indexLoading: 100;
 $indexSliderButton: 10;
 $indexNav: 90;
@@ -38,6 +33,9 @@ $indexMobileNav: 90;
 $indexMobileNavButton: 91;
 
 // type
-
-$fontStack: 'Arial', sans-serif;
+$fontStack: 'Roboto', sans-serif;
 $fontSize: 14px;
+$fontSizeSmall: 11px;
+$fontSizeMedium: 21px;
+$fontSizeLarge: 28px;
+$fontSizeHuge: 68px;

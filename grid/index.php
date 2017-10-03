@@ -3,7 +3,7 @@
 		$count = 0;
 		$query = new WP_Query(array(
 			'post_type' => 'index',
-			'posts_per_page' => 6,
+			'posts_per_page' => 4,
 			'orderby' => 'menu_order'
 		));
 

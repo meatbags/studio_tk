@@ -7,9 +7,10 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 	<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/lib/icon/favicon.png">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
 	<?php wp_head(); ?>
-	
+
 	<script>
 		/* <![CDATA[ */
 		var themePath = '<?php echo get_template_directory_uri(); ?>';

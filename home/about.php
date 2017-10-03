@@ -4,7 +4,7 @@
 ?>
 
 For more insights and previews subscribe our Newsletter
-and follow us on Instagram & Facebook
+and follow us on Instagram & Facebook.
 
 <div class='subscribe'>
   SUBSCRIBE...

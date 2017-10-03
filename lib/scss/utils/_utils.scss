@@ -39,3 +39,16 @@
 .text-left {
 	text-align: left;
 }
+
+.text-medium {
+	font-size: $fontSizeMedium;
+}
+
+.text-large {
+	font-size: $fontSizeLarge;
+}
+
+.text-huge {
+	font-size: $fontSizeHuge;
+	font-weight: bold;
+}
