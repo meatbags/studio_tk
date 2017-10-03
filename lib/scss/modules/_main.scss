@@ -11,6 +11,28 @@
 
 .editorials-grid {
 	background-color: $colourAlt;
+	color: $colourBackground;
+
+	.item {
+		width: 50%;
+		position: relative;
+		margin: 0 auto;
+
+		.item__inner {
+			width: 100%;
+			height: 100%;
+			padding: $space3;
+
+			.item__inner__date {
+				position: absolute;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
 }
 
 .index-grid {

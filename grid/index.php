@@ -19,7 +19,11 @@
 	?>
 
 	<div class='item grid__half grid__item'>
-		<a href='<?php echo get_site_url(); ?>/index/'>
+		<a href='<?php if (is_home()) {
+				echo get_site_url() . '/index/';
+			} else {
+				echo $link;
+			}?>'>
 			<div class='item__inner reveal-children'>
 				<div class='grid'>
 					<div class='grid__third'>(<?php echo $count; ?>)</div>
