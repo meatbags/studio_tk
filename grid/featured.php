@@ -1,6 +1,6 @@
 <!-- featured products grid -->
 
-<div class='grid'>
+<div class='grid featured-grid'>
 	<?php
 		$query = new WP_Query(array(
 			'post_type' => 'product',

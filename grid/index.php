@@ -1,11 +1,15 @@
-<div class='grid'>
+<!-- index grid -->
+
+<div class='grid index-grid trigger' data-title='INDEX'>
 	<?php
 		$count = 0;
+		$load = (is_home() ? 6 : -1);
 		$query = new WP_Query(array(
 			'post_type' => 'index',
-			'posts_per_page' => 4,
+			'posts_per_page' => $load,
 			'orderby' => 'menu_order'
 		));
+		$postCount = sizeof($query->posts);
 
 		if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 			$title = get_the_title();
@@ -14,24 +18,36 @@
 			$categories = get_the_category();
 	?>
 
-	<div class='grid__half grid__item parallax parallax-once parallax-rise parallax-fade'>
-		<a href='<?php echo $link; ?>'>
-			<?php
-				echo $count;
-				echo $title;
-				if (sizeof($categories) > 0) {
-					echo $categories[0]->name;
-				}
-				echo $image;
-			?>
+	<div class='item grid__half grid__item'>
+		<a href='<?php echo get_site_url(); ?>/index/'>
+			<div class='item__inner reveal-children'>
+				<div class='grid'>
+					<div class='grid__third'>(<?php echo $count; ?>)</div>
+					<div class='grid__third text-centre reveal'><?php echo $title; ?></div>
+					<div class='grid__third text-right'><?php
+						if (sizeof($categories) > 0) {
+							echo '(' . $categories[0]->name . ')';
+						} else {
+							echo '&nbsp;';
+						}
+					?></div>
+				</div>
+				<div class='item__image parallax parallax-once parallax-rise parallax-fade'>
+					<img src='<?php echo $image;?>' />
+				</div>
+			</div>
 		</a>
 	</div>
+	<?php if ($count % 2 == 1 && $count != $postCount - 1): ?>
+		<div class='grid__divider'></div>
+	<?php endif; ?>
 
 	<?php
 		$count++;
 		endwhile;
 		endif;
+		if (is_home()):
 	?>
-
-	<div>( Load more )</div>
+		<div class='grid__full text-normal text-centre'>(LOAD MORE)</div>
+	<?php endif; ?>
 </div>

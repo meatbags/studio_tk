@@ -40,6 +40,14 @@
 	text-align: left;
 }
 
+.text-small {
+	font-size: $fontSizeSmall;
+}
+
+.text-normal {
+	font-size: $fontSize;
+}
+
 .text-medium {
 	font-size: $fontSizeMedium;
 }
@@ -51,4 +59,20 @@
 .text-huge {
 	font-size: $fontSizeHuge;
 	font-weight: bold;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.border-left {
+	border-left: 1px solid black;
+}
+
+.reveal {
+	opacity: 0;
+
+	&.active {
+		opacity: 1;
+	}
 }

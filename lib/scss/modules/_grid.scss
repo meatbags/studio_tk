@@ -7,35 +7,25 @@
 		height: 75vh;
 	}
 
-	.grid__quarter {
-		width: 25%;
-		border-left: 1px solid $black;
-
-		&:nth-of-type(4n-3) {
-			border-left: none;
-		}
-	}
-
-	.grid__third {
-		width: 33%;
-		border-left: 1px solid $black;
-
-		&:nth-of-type(3n-2) {
-			border-left: none;
-		}
+	.grid__full {
+		width: 100%;
 	}
 
 	.grid__half {
 		width: 50%;
+	}
 
-		&:nth-of-type(2n) {
-			border-left: 1px solid $black;
-		}
+	.grid__quarter {
+		width: 25%;
+	}
+
+	.grid__third {
+		width: 33%;
 	}
 
 	.grid__divider {
 		width: 100%;
-		border-bottom: 1px solid $black;
+		border-bottom: $border;
 	}
 
 	@media screen and (max-width: $mobile) {

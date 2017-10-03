@@ -4,13 +4,13 @@
 <div class="footer" role="contentinfo">
 	<div class='footer__inner grid'>
 		<div class='grid__third text-left' id="copyright">
-			&copy; TEUBER KOHLHOFF
+			&copy; 2017 TEUBER KOHLHOFF I ALL RIGHTS RESERVED
 		</div>
 		<div class='grid__third text-centre' id="copyright">
-			I SHOP I INDEX I EDITORIAL I INFO I
+			SHOP I INDEX I EDITORIAL I INFO I INSTAGRAM I FACEBOOK
 		</div>
 		<div class='grid__third text-right' id="copyright">
-			INSTAGRAM I FACEBOOK I IMPRINT I TERMS & CONDITIONS
+			IMPRINT I DELIVERY INFORMATION I TERMS & CONDITIONS
 		</div>
 		<?php //get_search_form(); ?>
 	</div>

@@ -9,10 +9,13 @@ $colourBackground: $white;
 $colourAlt: $green;
 
 // spacing
-$space: 10px;
+$space: 16px;
 $spaceLarge: $space * 4;
 $sizeNav: 40px;
 $sizeFooter: 40px;
+
+// lines
+$border: 1px solid $black;
 
 // breakpoints
 $large: 1200px;
@@ -22,6 +25,7 @@ $small: 480px;
 
 // transitions
 $transitionFast: 0.25s;
+$transition: 0.5s;
 $transitionNormal: 0.5s;
 $transitionSlow: 0.75s;
 

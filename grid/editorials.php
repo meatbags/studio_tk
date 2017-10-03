@@ -1,6 +1,6 @@
-<!-- front page editorials grid -->
+<!-- editorials grid -->
 
-<div class='grid editorials-grid'>
+<div class='grid editorials-grid trigger' data-title='EDITORIALS'>
 	<?php
 		$query = new WP_Query(array(
 			'post_type' => 'editorials',

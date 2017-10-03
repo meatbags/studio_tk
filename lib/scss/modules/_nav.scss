@@ -2,43 +2,30 @@
 	@extend .noselect;
 	height: $sizeNav;
 	width: 100%;
-	//transition: $transitionSlow;
+	transition: $transition;
 	//background: $colourBackground;
 	z-index: $indexNav;
 
 	.nav__list {
 		width: 100%;
 		height: 100%;
-		display: flex;
-		justify-content: space-around;
 		padding-top: $space;
-
-		.nav__list__third {
-			width: 33%;
-			display: flex;
-			align-items: flex-end;
-
-			&.left {
-				flex-direction: row;
-			}
-
-			&.right {
-				flex-direction: row-reverse;
-			}
-
-			&.centre {
-				justify-content: center;
-			}
-		}
+		padding-left: $space * 2;
+		padding-right: $space * 2;
 
 		.nav__list__item {
+			display: inline-block;
+
 			a {
-				padding: $space;
 				display: flex;
 
 				&:hover {
 					opacity: 0.6;
 				}
+			}
+
+			&:nth-child(1) {
+				margin-right: $space * 2;
 			}
 		}
 	}
@@ -47,10 +34,16 @@
 		position: fixed;
 		top: -$sizeNav;
 		left: 0;
+		opacity: 0;
 	}
 
 	&.nav-index.active {
 		top: 0;
+		opacity: 1;
+	}
+
+	&.inverted {
+		color: $colourBackground;
 	}
 }
 
