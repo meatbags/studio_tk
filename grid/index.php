@@ -14,7 +14,7 @@
 		if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 			$title = get_the_title();
 			$link = get_the_permalink();
-			$image = get_field('images')[0]['sizes']['large'];
+			$type = get_field('menu_type');
 			$categories = get_the_category();
 	?>
 
@@ -37,7 +37,23 @@
 					?></div>
 				</div>
 				<div class='item__image parallax parallax-once parallax-rise parallax-fade'>
-					<img src='<?php echo $image;?>' />
+					<?php if ($type == 'type_static') :
+						$image = get_field('image_single')['sizes']['large'];
+					?>
+						<img src='<?php echo $image;?>' />
+					<?php elseif ($type == 'type_hover') :
+						$images = get_field['image_double'];
+						$im1 = $images[0]['hover_image'];
+						$im2 = $images[1]['hover_image'];
+					?>
+						<img src='<?php echo $im1;?>' />
+						<img src='<?php echo $im1;?>' />
+					<?php elseif ($type == 'type_inspector') :
+						$shape = get_field('shape');
+						$image = get_field('image_single')['url'];
+						?>
+						<img src='<?php echo $image;?>' />
+					<?php endif; ?>
 				</div>
 			</div>
 		</a>

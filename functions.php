@@ -44,6 +44,7 @@ function ajax_load(){
               "<div class='item__image parallax parallax-once parallax-rise parallax-fade'>" .
                 "<img src='" . $image . "' />" .
         "</div></div></a></div>";
+
       } elseif ($type == 'editorials' && $count >= $offset) {
         $title = get_the_title();
 				$image = get_field('main_image')['sizes']['large'];
@@ -72,7 +73,6 @@ function ajax_load(){
   wp_reset_postdata();
   die(json_encode($output));
 }
-
 add_action('wp_ajax_nopriv_ajax_load', 'ajax_load');
 add_action('wp_ajax_ajax_load', 'ajax_load');
 
