@@ -47,6 +47,8 @@
 }
 
 .menu {
+	@extend .text-large;
+
 	padding-top: $space3;
 	position: fixed;
 	width: 49vw;
@@ -55,7 +57,6 @@
 	right: 0;
 	background: $colourBackground;
 	z-index: $indexMenu;
-	font-size: $fontSizeHuge;
 	transform: translateX(50vw);
 	transition: transform $transition;
 

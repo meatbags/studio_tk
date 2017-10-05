@@ -23,7 +23,7 @@
 				FILTER
 			</div>
 			<div class='nav__list__item'>
-				<a href='<?php echo get_site_url(); ?>/cart/'>CART</a>
+				<a href='<?php echo get_site_url(); ?>/cart/'>CART (<?php echo WC()->cart->get_cart_contents_count(); ?>)</a>
 			</div>
 		</div>
 	</div>

@@ -29,6 +29,6 @@
 	</div>
 </div>
 
-<div class="content" id="aws_main">
+<div class="content">
 	<div class="wrapper">
 		<?php get_template_part('nav'); ?>

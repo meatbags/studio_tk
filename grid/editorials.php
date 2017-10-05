@@ -9,14 +9,18 @@
 			'posts_per_page' => $load
 		));
 		$count = 0;
-		$postCount = sizeof($query)
+		$postCount = sizeof($query->posts);
 
-		if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
-			$title = get_the_title();
-			$image = get_field('image');
-			$date = get_the_date();
-			$excerpt = get_the_excerpt();
-			$link = get_the_permalink();
+		if ($query->have_posts()):
+			while ($query->have_posts()):
+				$query->the_post();
+
+				// get fields
+				$title = get_the_title();
+				$image = get_field('main_image')['sizes']['large'];
+				$date = get_the_date();
+				$excerpt = get_the_excerpt();
+				$link = get_the_permalink();
 	?>
 
 	<div class='grid__full'>
@@ -47,10 +51,18 @@
 	</div>
 
 	<?php
+		if ($count != $postCount - 1) :
+	?>
+		<div class='divider'></div>
+	<?php
+		endif;
+
+		$count++;
+
 		endwhile;
 		endif;
 		if (is_home()) :
 	?>
-		<div class='grid__full text-normal text-centre'>(LOAD MORE)</div>
+		<div id='load-more-editorials' class='grid__full transition text-normal text-centre clickable'>(LOAD MORE)</div>
 	<?php endif; ?>
 </div>

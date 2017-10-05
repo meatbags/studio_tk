@@ -52,6 +52,6 @@
 		endif;
 		if (is_home()):
 	?>
-		<div class='grid__full text-normal text-centre'>(LOAD MORE)</div>
+		<div id='load-more-projects' class='grid__full clickable text-normal transition text-centre'>(LOAD MORE)</div>
 	<?php endif; ?>
 </div>
