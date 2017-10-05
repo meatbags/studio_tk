@@ -13,12 +13,14 @@ $space: 18px;
 $space2: $space * 2;
 $space3: $space * 3;
 $space4: $space * 4;
+$space5: $space * 5;
 $space6: $space * 6;
 $sizeNav: 40px;
 $sizeFooter: 40px;
 
 // lines
 $border: 1px solid $black;
+$borderAlt: 1px solid $white;
 
 // breakpoints
 $large: 1200px;
@@ -44,8 +46,9 @@ $indexMobileNavButton: 91;
 $fontStackSansSerif: SansSerifAlt, sans-serif;
 $fontStackSerif: Lyon, serif;
 $fontStack: $fontStackSansSerif;
-$fontSize: 14px;
-$fontSizeSmall: 11px;
-$fontSizeMedium: 21px;
-$fontSizeLarge: 42px;
-$fontSizeHuge: 68px;
+$fontSizeTiny: 12px;
+$fontSizeSmall: 16px;
+$fontSize: 20px;
+$fontSizeMedium: 34px;
+$fontSizeLarge: 58px;
+$fontSizeHuge: 80px;

@@ -22,13 +22,12 @@
 
 <body <?php body_class(); ?>>
 
-<!--
 <div class='loading-screen'>
 	<div class='loading-screen__message'>
-		loading...
+		<img src='<?php echo get_template_directory_uri(); ?>/lib/img/logo_short.png' />
+		<br /><br />
 	</div>
 </div>
--->
 
 <div class="content" id="aws_main">
 	<div class="wrapper">

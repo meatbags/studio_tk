@@ -8,6 +8,8 @@
 			'orderby' => 'menu_order',
 			'posts_per_page' => $load
 		));
+		$count = 0;
+		$postCount = sizeof($query)
 
 		if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 			$title = get_the_title();
@@ -18,27 +20,37 @@
 	?>
 
 	<div class='grid__full'>
-		<div class='item'>
+		<div class='item editorial-item'>
 			<a href='<?php if (is_home()) {
 					echo get_site_url() . '/editorials/';
 				} else {
 					echo $link;
 				}?>'>
 				<div class='item__inner reveal-children'>
-					<div class='item__inner__date reveal'>
+					<div class='item__inner__date reveal text-large'>
 						(<?php echo $date; ?>)
 					</div>
-					<img src='<?php echo $image;?>' />
-					<div class='item__inner__title'>
-						<?php echo $title; ?>
+					<div class='item__inner__image'>
+						<img src='<?php echo $image;?>' />
 					</div>
-					<div class='item__inner__text'>
-						<?php echo $excerpt; ?>
+					<div class='item__inner__desc'>
+						<div class='uppercase'>
+							<?php echo $title; ?>
+						</div>
+						<div class='font-serif'>
+							<?php echo $excerpt; ?>
+						</div>
 					</div>
 				</div>
 			</a>
 		</div>
 	</div>
 
-	<?php endwhile; endif; ?>
+	<?php
+		endwhile;
+		endif;
+		if (is_home()) :
+	?>
+		<div class='grid__full text-normal text-centre'>(LOAD MORE)</div>
+	<?php endif; ?>
 </div>

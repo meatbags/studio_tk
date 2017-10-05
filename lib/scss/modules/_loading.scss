@@ -2,12 +2,15 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
 	background: $lightGrey;
 	z-index: $indexLoading;
-	transition: $transitionNormal;
+	//transition: $transitionNormal;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	.loading-screen__message {
+	}
 }

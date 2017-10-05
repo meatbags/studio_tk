@@ -12,9 +12,12 @@
 .editorials-grid {
 	background-color: $colourAlt;
 	color: $colourBackground;
+	width: 100%;
+	padding-top: $space2;
+	padding-bottom: $space2;
 
 	.item {
-		width: 50%;
+		width: 60%;
 		position: relative;
 		margin: 0 auto;
 
@@ -25,21 +28,39 @@
 
 			.item__inner__date {
 				position: absolute;
+				padding: $space;
 			}
 
-			img {
+			.item__inner__image {
 				width: 100%;
-				height: auto;
+				max-height: 60vh;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+
+			.item__inner__desc {
+				padding-left: $space2;
+				padding-right: $space2;
+				padding-top: $space / 2;
 			}
 		}
+	}
+
+	.divider {
+		width: 100%;
+		border: $borderAlt;
 	}
 }
 
 .index-grid {
 	padding-top: $space4;
+	padding-bottom: $space2;
 	padding-left: $space3;
 	padding-right: $space3;
-	font-size: $fontSizeLarge;
 	background: $colourBackground;
 	z-index: 2;
 
@@ -91,12 +112,13 @@
 }
 
 .about {
+	padding-top: $space4;
 	padding-left: $space3;
 	padding-right: $space3;
 
 	.about__inner {
-		padding-left: $space6;
-		padding-right: $space6;
+		padding-left: $space5;
+		padding-right: $space5;
 		padding-top: $space3;
 		padding-bottom: $space3;
 		display: flex;
@@ -108,18 +130,9 @@
 		}
 
 		.about__inner__subscribe {
-			width: 33%;
+			width: 35%;
 			margin-top: $space3;
 			text-align: center;
-
-			form {
-				width: 100%;
-
-				input {
-					width: 100%;
-					text-align: center;
-				}
-			}
 		}
 	}
 }
@@ -130,7 +143,7 @@
 
 	.item {
 		padding: $space;
-		height: 200px;
+		height: 250px;
 		background: $lightGrey;
 
 		.item__inner {

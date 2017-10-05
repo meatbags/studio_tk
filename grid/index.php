@@ -25,7 +25,7 @@
 				echo $link;
 			}?>'>
 			<div class='item__inner reveal-children'>
-				<div class='grid'>
+				<div class='grid text-medium uppercase'>
 					<div class='grid__third'>(<?php echo $count; ?>)</div>
 					<div class='grid__third text-centre reveal'><?php echo $title; ?></div>
 					<div class='grid__third text-right'><?php

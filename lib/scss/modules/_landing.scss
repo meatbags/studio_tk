@@ -16,7 +16,7 @@
 		overflow: hidden;
 
 		img {
-			width: 100%;
+			object-fit: cover;
 		}
 
 		video {
@@ -35,5 +35,14 @@
 		align-items: center;
 		text-transform: uppercase;
 		text-align: center;
+
+		.landing__title__inner {
+			width: 33vw;
+
+			img {
+				width: 100%;
+				margin-bottom: $space / 2;
+			}
+		}
 	}
 }

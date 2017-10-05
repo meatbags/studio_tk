@@ -5,7 +5,7 @@
   $webm = get_field('landing_page_video_webm', $page->ID);
 ?>
 
-<div class='landing'>
+<div class='landing hidden trigger' data-title='INDEX'>
   <div class='landing__image'>
     <?php if ($mp4 != '' || $webm != ''): ?>
       <video loop autoplay>
@@ -18,12 +18,8 @@
   </div>
   <div class='landing__title'>
     <div class='landing__title__inner'>
-      <div class='text-huge'>
-        <?php echo get_bloginfo('name'); ?>
-      </div>
-      <div class='text-small'>
-        <?php echo get_bloginfo('description'); ?>
-      </div>
+      <img src='<?php echo get_template_directory_uri(); ?>/lib/img/logo.svg' />
+      <?php echo get_bloginfo('description'); ?>
     </div>
   </div>
 </div>

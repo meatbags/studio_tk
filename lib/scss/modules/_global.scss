@@ -9,6 +9,8 @@ body, html {
 	color: $colourPrimary;
 	font-family: $fontStack;
 	font-size: $fontSize;
+	letter-spacing: 1px;
+	overflow-x: hidden;
 }
 
 ul {

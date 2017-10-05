@@ -44,6 +44,14 @@
 	font-size: $fontSizeSmall;
 }
 
+.transparent {
+	opacity: 0.5;
+}
+
+.text-tiny {
+	font-size: $fontSizeTiny;
+}
+
 .text-normal {
 	font-size: $fontSize;
 }
