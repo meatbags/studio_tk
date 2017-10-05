@@ -61,6 +61,14 @@
 	font-weight: bold;
 }
 
+.font-serif {
+	font-family: $fontStackSerif;
+}
+
+.font-sans-serif {
+	font-family: $fontStackSansSerif;
+}
+
 .uppercase {
 	text-transform: uppercase;
 }

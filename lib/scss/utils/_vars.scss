@@ -41,7 +41,9 @@ $indexMobileNav: 90;
 $indexMobileNavButton: 91;
 
 // type
-$fontStack: 'Roboto', sans-serif;
+$fontStackSansSerif: SansSerifAlt, sans-serif;
+$fontStackSerif: Lyon, serif;
+$fontStack: $fontStackSansSerif;
 $fontSize: 14px;
 $fontSizeSmall: 11px;
 $fontSizeMedium: 21px;
