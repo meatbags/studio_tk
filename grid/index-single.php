@@ -8,13 +8,21 @@
 ?>
 
 <div class='item grid__half grid__item'>
+  <?php if ($type != 'type_inspector'): ?>
   <a href='<?php echo (is_home() ? get_site_url() . '/index/' : get_the_permalink()); ?>'>
+  <?php endif; ?>
     <div class='item__inner reveal-children'>
+      <?php if ($type == 'type_inspector'): ?>
+        <a href='<?php echo (is_home() ? get_site_url() . '/index/' : get_the_permalink()); ?>'>
+      <?php endif; ?>
       <div class='grid text-medium uppercase'>
         <div class='grid__third'>(<?php echo $count; ?>)</div>
         <div class='grid__third text-centre reveal'><?php echo $title; ?></div>
         <div class='grid__third text-right'><?php echo $cat; ?></div>
       </div>
+      <?php if ($type == 'type_inspector'): ?>
+        </a>
+      <?php endif; ?>
       <div class='item__image parallax parallax-once parallax-rise parallax-fade'>
         <?php
           if ($type == 'type_static') :
@@ -31,13 +39,12 @@
             <img class='reveal display-none' src='<?php echo $src2; ?>' />
         <?php
           elseif ($type == 'type_inspector') :
-            $shape = get_field('shape');
-            ?>
-            <div class='inspector'>
-              <?php get_template_part('lib/img/' . $shape); ?>
-            </div>
-        <?php endif; ?>
+            get_template_part('inspector/inspector');
+          endif;
+        ?>
       </div>
     </div>
+  <?php if ($type != 'type_inspector'): ?>
   </a>
+  <?php endif; ?>
 </div>
