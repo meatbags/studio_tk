@@ -38,6 +38,8 @@ function ajax_load(){
     }
   }
 
+  wp_reset_query();
+
   die();
 }
 add_action('wp_ajax_nopriv_ajax_load', 'ajax_load');

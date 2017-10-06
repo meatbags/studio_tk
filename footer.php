@@ -1,7 +1,7 @@
 	</div> <!-- /wrapper -->
 </div> <!-- /content -->
 
-<div class="footer" role="contentinfo">
+<div class="footer <?php echo ((is_page('Editorials')) ? 'footer-alt': '');?>" role="contentinfo">
 	<div class='footer__inner grid'>
 		<div class='grid__third text-left' id="copyright">
 			&copy; 2017 TEUBER KOHLHOFF I ALL RIGHTS RESERVED

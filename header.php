@@ -20,7 +20,7 @@
 	</script>
 </head>
 
-<body <?php body_class(); ?>>
+<body class="<?php echo join(' ', get_body_class('')) . ((is_page('Editorials') ? ' body-alt' : '')); ?>">
 
 <div class='loading-screen'>
 	<div class='loading-screen__message'>

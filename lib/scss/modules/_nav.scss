@@ -93,6 +93,19 @@
 	&.inverted {
 		color: $colourBackground;
 		background: $colourAlt;
+
+		.item {
+			border-bottom: $borderAlt;
+		}
+	}
+}
+
+.body-alt .menu {
+	color: $colourBackground;
+	background: $colourAlt;
+
+	.item {
+		border-bottom: $borderAlt;
 	}
 }
 

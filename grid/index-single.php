@@ -4,6 +4,7 @@
   $type = get_field('menu_type');
   $categories = get_the_category();
   $cat = (sizeof($categories) > 0) ? '(' . $categories[0]->name . ')' : '&nbsp;';
+  $count = 'A';
 ?>
 
 <div class='item grid__half grid__item'>

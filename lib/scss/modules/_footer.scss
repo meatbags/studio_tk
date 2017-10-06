@@ -10,6 +10,14 @@
 		height: 100%;
 		border-top: $border;
 		padding-top: $space;
-		background: $colourBackground;
+	}
+
+	&.footer-alt {
+		background: $colourAlt;
+
+		.footer__inner {
+			color: $white;
+			border-top: $borderAlt;
+		}
 	}
 }

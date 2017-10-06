@@ -52,6 +52,14 @@
 	opacity: 0.5;
 }
 
+.padding {
+	padding: $space;
+}
+
+.text-black {
+	color: $black;
+}
+
 .text-tiny {
 	font-size: $fontSizeTiny;
 }
@@ -95,6 +103,10 @@
 
 .padding-left {
 	padding-left: $space;
+}
+
+.background-white {
+	background: $white;
 }
 
 .padding-top {

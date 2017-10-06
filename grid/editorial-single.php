@@ -1,4 +1,4 @@
-<?php 
+<?php
   $title = get_the_title();
   $image = get_field('main_image')['sizes']['large'];
   $date = get_the_date();
