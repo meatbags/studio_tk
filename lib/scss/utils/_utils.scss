@@ -123,6 +123,27 @@
 	&.active {
 		opacity: 1;
 	}
+
+	&.display-none {
+		display: none;
+
+		&.active {
+			display: block;
+		}
+	}
+
+	&.inverted {
+		opacity: 1;
+		display: block;
+
+		&.active {
+			opacity: 0;
+
+			&.display-none {
+				display: none;
+			}
+		}
+	}
 }
 
 .clickable {

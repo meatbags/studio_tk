@@ -54,7 +54,7 @@ function teuber_setup()
 add_action('after_setup_theme', 'teuber_setup');
 
 function remove_admin_post_types() {
-  remove_menu_page('edit.php'); // posts
+  //remove_menu_page('edit.php'); // posts
   remove_menu_page('edit-comments.php');
 }
 add_action('admin_menu', 'remove_admin_post_types');
