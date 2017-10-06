@@ -13,65 +13,32 @@ function ajax_load(){
     'order' => 'DESC',
     'orderby' => 'menu_order'
   ));
-  //'offset' => $offset
 
   $count = 0;
   $output = '';
 
-  if ($query->have_posts()):
-    while ($query->have_posts()):
+  if ($query->have_posts()) {
+    while ($query->have_posts()) {
       $query->the_post();
 
-      if ($type == 'index' && $count >= $offset) {
-        $title = get_the_title();
-  			$link = get_the_permalink();
-  			$image = get_field('images')[0]['sizes']['large'];
-  			$categories = get_the_category();
-        $cat = (sizeof($categories) > 0) ? '(' . $categories[0]->name . ')' : '&nbsp;';
+      if ($count >= $offset) {
+        if ($type == 'index') {
+          if ($count % 2 == 0) {
+            echo "<div class='grid__divider'></div>";
+          }
 
-        if ($count % 2 == 0) {
-          $output .= "<div class='grid__divider'></div>";
+          get_template_part('grid/index-single');
+        } else if ($type == 'editorials') {
+          echo "<div class='divider'></div>";
+          get_template_part('grid/editorial-single');
         }
-
-        $output .= "<div class='item grid__half grid__item'>" .
-          "<a href='" . get_site_url() . "/index/'>" .
-            "<div class='item__inner reveal-children'>" .
-              "<div class='grid text-medium uppercase'>" .
-                "<div class='grid__third'>(" . $count . ")</div>" .
-                "<div class='grid__third text-centre reveal'>" . $title . "</div>" .
-                "<div class='grid__third text-right'>" . $cat . "</div>" .
-              "</div>" .
-              "<div class='item__image parallax parallax-once parallax-rise parallax-fade'>" .
-                "<img src='" . $image . "' />" .
-        "</div></div></a></div>";
-
-      } elseif ($type == 'editorials' && $count >= $offset) {
-        $title = get_the_title();
-				$image = get_field('main_image')['sizes']['large'];
-				$date = get_the_date();
-				$excerpt = get_the_excerpt();
-				$link = get_the_permalink();
-
-        $output .= "<div class='divider'></div><div class='grid__full'>" .
-      		"<div class='item editorial-item'>" .
-      			"<a href='" . get_site_url() . "/editorials/'>" .
-      				"<div class='item__inner reveal-children'>" .
-      					"<div class='item__inner__date reveal text-large'>(" . $date . ")</div>" .
-      					"<div class='item__inner__image'>" .
-      						"<img src='" . $image . "' />" .
-      					"</div>" .
-      					"<div class='item__inner__desc'>" .
-      						"<div class='uppercase'>" . $title . "</div>" .
-      						"<div class='font-serif'>" . $excerpt . "</div>" .
-      		"</div></div></a></div></div>";
       }
 
       $count++;
-    endwhile;
-  endif;
+    }
+  }
 
-  wp_reset_postdata();
-  die(json_encode($output));
+  die();
 }
 add_action('wp_ajax_nopriv_ajax_load', 'ajax_load');
 add_action('wp_ajax_ajax_load', 'ajax_load');
