@@ -14,7 +14,12 @@
 		if ($query->have_posts()) {
 			while ($query->have_posts()) {
 				$query->the_post();
-				get_template_part('grid/index-single');
+
+				if (is_home()) {
+					get_template_part('grid/index-single-home');
+				} else {
+					get_template_part('grid/index-single');
+				}
 
 				if ($count % 2 == 1 && $count != $last) {
 					echo "<div class='grid__divider'></div>";

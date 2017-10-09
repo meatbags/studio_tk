@@ -18,6 +18,12 @@ body, html {
 	}
 }
 
+html {
+	&.freeze {
+		//overflow: hidden;
+	}
+}
+
 ul {
 	list-style-type: none;
 	margin: 0;

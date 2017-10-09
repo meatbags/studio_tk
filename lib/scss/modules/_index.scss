@@ -6,6 +6,11 @@
 	padding-right: $space3;
 	background: $colourBackground;
 	z-index: 2;
+  transition: opacity $transition;
+
+  &.fade {
+    opacity: 0.5;
+  }
 
 	&.index-grid-related {
 		padding-top: $space2;
@@ -92,5 +97,37 @@
 
   .inspector__image {
     position: absolute;
+  }
+}
+
+.index-overlay {
+  position: fixed;
+  top: 100vh;
+  opacity: 0;
+  z-index: $indexOverlay;
+  transition: top $transition;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  .index-overlay__inner {
+    padding-top: $space4;
+    background: $colourBackground;
+    width: 100%;
+    min-height: 110vh;
+    margin-bottom: 100vh;
+    border-bottom: 10px black solid;
+  }
+
+  &.active {
+    top: 0;
+    opacity: 1;
+  }
+
+  &.slide-up {
+    top: -100vh;
+    opacity: 1;
+    overflow: hidden;
   }
 }

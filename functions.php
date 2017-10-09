@@ -1,7 +1,7 @@
 <?php
 
 function ajax_load(){
-  header("Content-Type: application/json");
+  header("Content-Type: text/html");
 
   $postCount = $_POST["postCount"];
   $offset = $_POST["offset"];
@@ -13,7 +13,6 @@ function ajax_load(){
     'order' => 'DESC',
     'orderby' => 'menu_order'
   ));
-
   $count = 0;
   $output = '';
 
@@ -27,7 +26,7 @@ function ajax_load(){
             echo "<div class='grid__divider'></div>";
           }
 
-          get_template_part('grid/index-single');
+          get_template_part('grid/index-single-home');
         } else if ($type == 'editorials') {
           echo "<div class='divider'></div>";
           get_template_part('grid/editorial-single');
@@ -39,11 +38,32 @@ function ajax_load(){
   }
 
   wp_reset_query();
-
   die();
 }
 add_action('wp_ajax_nopriv_ajax_load', 'ajax_load');
 add_action('wp_ajax_ajax_load', 'ajax_load');
+
+function ajax_index(){
+  header("Content-Type: text/html");
+
+  $ids = array($_POST["id"]);
+  $query = new WP_Query(array(
+    'post_type' => 'index',
+    'post__in' => $ids
+  ));
+
+  if ($query->have_posts()) {
+    while ($query->have_posts()) {
+      $query->the_post();
+      get_template_part('single-index');
+    }
+  }
+
+  wp_reset_query();
+  die();
+}
+add_action('wp_ajax_nopriv_ajax_index', 'ajax_index');
+add_action('wp_ajax_ajax_index', 'ajax_index');
 
 function teuber_setup()
 {

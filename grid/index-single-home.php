@@ -5,10 +5,10 @@
   $categories = get_the_category();
   $cat = (sizeof($categories) > 0) ? '(' . $categories[0]->name . ')' : '&nbsp;';
   $count = 'A';
-  $url = '#' . $title; //get_the_permalink()
+  $url = get_site_url() . '/index/';
 ?>
 
-<div class='item grid__half grid__item <?php if ($type != 'type_inspector'){echo 'index-trigger';}?>' data-post='<?php echo $id; ?>'>
+<div class='item grid__half grid__item'>
   <?php if ($type != 'type_inspector'): ?>
   <a href='<?php echo $url; ?>'>
   <?php endif; ?>
@@ -16,7 +16,7 @@
       <?php if ($type == 'type_inspector'): ?>
         <a href='<?php echo $url; ?>'>
       <?php endif; ?>
-      <div class='grid text-medium uppercase <?php if ($type == 'type_inspector'){echo 'index-trigger';}?>' data-post='<?php echo $id; ?>'>
+      <div class='grid text-medium uppercase'>
         <div class='grid__third'>(<?php echo $count; ?>)</div>
         <div class='grid__third text-centre reveal'><?php echo $title; ?></div>
         <div class='grid__third text-right'><?php echo $cat; ?></div>

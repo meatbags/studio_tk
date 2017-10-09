@@ -1,1 +1,4 @@
-<?php get_header(); get_footer(); ?>
+<?php
+  $title = get_the_title();
+  echo $title;
+?>
