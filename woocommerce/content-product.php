@@ -29,6 +29,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 ?>
 
 <li <?php post_class(); ?>>
+
+	HELLO WORLD?
+
 	<?php
 	/**
 	 * woocommerce_before_shop_loop_item hook.

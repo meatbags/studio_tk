@@ -39,6 +39,14 @@
 		width: 75%;
 	}
 
+	.grid__fifth {
+		width: 20%;
+	}
+
+	.grid__threefifths {
+		width: 60%;
+	}
+
 	.grid__sixth {
 		width: 16.666%;
 	}
@@ -46,6 +54,10 @@
 	.grid__divider {
 		width: 100%;
 		border-bottom: $border;
+	}
+
+	.grid__expand {
+		flex: 1;
 	}
 
 	@media screen and (max-width: $mobile) {

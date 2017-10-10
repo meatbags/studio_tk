@@ -1,10 +1,26 @@
 .newsletter {
   width: 100%;
+  display: flex;
+  color: $grey;
 
   input {
-    width: 100%;
+    flex: 1;
+    display: inline;
     text-align: center;
     padding-top: $space / 2;
     padding-bottom: $space / 2;
+    border: $borderGrey;
+    color: $grey;
+  }
+
+  button {
+    display: inline;
+    background: $colourBackground;
+    border: 0;
+    padding-left: $space;
+    padding-right: $space;
+    margin-left: 1px;
+    border: $borderGrey;
+    color: $grey;
   }
 }

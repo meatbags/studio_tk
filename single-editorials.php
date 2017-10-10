@@ -2,8 +2,8 @@
 <div class='editorial'>
   <div class='grid'>
 <?php
-  if (have_posts()) {
-		while (have_posts()) {
+  if (have_posts()):
+		while (have_posts()):
       the_post();
 
       // get fields
@@ -12,30 +12,60 @@
       $date = get_the_date();
       $mainImage = get_field('main_image')['sizes']['large'];
       $sections = get_field('sections');
-
       ?>
-      <div class='grid__full section-full'>
-        <img src='<?php echo $mainImage?>' />
+
+      <div class='grid section'>
+        <div class='grid__full section-full'>
+          <img src='<?php echo $mainImage?>' />
+        </div>
+        <div class='grid__quarter editorial__date text-right text-large'>
+          (<?php echo $date; ?>)
+        </div>
+        <div class='grid__threefifths editorial__description text-mediumsmall font-serif'>
+          <?php echo $content; ?>
+        </div>
       </div>
-      <div class='grid__quarter editorial__date text-right text-large'>
-        (<?php echo $date; ?>)
-      </div>
-      <div class='grid__half editorial__description padding text-mediumsmall font-serif'>
-        <?php echo $content; ?>
-      </div>
-      <div class='grid__quarter'></div>
+
       <?php
-
-      foreach ($sections as $section) {
-        $type = $section['layout_type'];
-
+        foreach ($sections as $section):
+          $type = $section['layout_type'];
         // full screen image/ video
+
         if ($type == 'type_full') {
           $media = $section['media_type'];
           $caption = $section['caption'];
           ?>
-          <div class='section'>
-            <div class='grid__full section-full'>
+          <div class='section pad'>
+            <div class='section-full'>
+              <div class='section-full__inner'>
+                <?php if ($media == 'type_image'): ?>
+                  <img src='<?php echo $section['image']['sizes']['large']; ?>'/>
+                <?php elseif ($media == 'type_video'): ?>
+                  <video loop autoplay>
+                    <source src="<?php echo $section['video']; ?>" type="video/mp4">
+                  </video>
+                <?php
+                  endif;
+                  if ($caption != ''): ?>
+                <div class='section-full__inner__caption'>
+                  <?php echo $caption; ?>
+                </div>
+                <?php endif; ?>
+              </div>
+            </div>
+          </div>
+          <?php
+        }
+
+        // single image/ video with margin
+
+        elseif ($type == 'type_single') {
+          $media = $section['media_type'];
+          $caption = $section['caption'];
+          ?>
+          <div class='section pad'>
+            <div class='section-single'>
+              <div class='section-single__inner'>
               <?php if ($media == 'type_image'): ?>
                 <img src='<?php echo $section['image']['sizes']['large']; ?>'/>
               <?php elseif ($media == 'type_video'): ?>
@@ -43,49 +73,43 @@
                   <source src="<?php echo $section['video']; ?>" type="video/mp4">
                 </video>
               <?php endif; ?>
-            </div>
-            <?php if ($caption != ''): ?>
-              <div class='grid__full'>
-                <?php echo $caption; ?>
+              <?php if ($caption != ''): ?>
+                <div class='section-single__inner__caption font-serif'>
+                  <?php echo $caption; ?>
+                </div>
+              <?php endif; ?>
               </div>
-            <?php endif; ?>
+            </div>
           </div>
           <?php
         }
 
-        // single image/ video with margin
-        elseif ($type == 'type_single') {
-          $media = $section['media_type'];
-          $caption = $section['caption'];
-          ?>
-          <div class='grid__full section section-full'>
-            <?php if ($media == 'type_image'): ?>
-              <img src='<?php echo $section['image']['sizes']['large']; ?>'/>
-            <?php elseif ($media == 'type_video'): ?>
-              <video loop autoplay>
-                <source src="<?php echo $section['video']; ?>" type="video/mp4">
-              </video>
-            <?php endif; ?>
-          </div>
-          <?php if ($caption != ''): ?>
-            <div class='grid__full'>
-              <?php echo $caption; ?>
-            </div>
-            </div>
-          <?php endif;
-        }
-
         // two images w/ margin
+
         elseif ($type == 'type_double') {
-          $images = $section['images'];
-          foreach ($images as $img): ?>
-
-          <div class='grid__half section section-double'>
-            <img src='<?php echo $img['image']['sizes']['large']; ?>' />
-            <?php echo $img['caption']; ?>
+          ?>
+          <div class='section pad'>
+            <div class='grid'>
+            <?php
+            $images = $section['images'];
+            foreach ($images as $img):
+              $src = $img['image']['sizes']['large'];
+              $caption = $img['caption'];
+              ?>
+              <div class='grid__half section-double'>
+                <div class='section-double__inner font-serif'>
+                  <img src='<?php echo $src; ?>' />
+                  <?php if ($caption != ''): ?>
+                    <div class='section-double__inner__caption'>
+                      <?php echo $caption; ?>
+                    </div>
+                  <?php endif; ?>
+                </div>
+              </div>
+            <?php endforeach; ?>
+            </div>
           </div>
-
-          <?php endforeach;
+          <?php
         }
 
         // text area
@@ -94,14 +118,22 @@
           $textTitle = $section['text_title'];
           $text = $section['text_area'];
           ?>
-          <div class='grid__full section section-textarea'>
-            <?php echo $textTitle; ?>
-            <?php echo $text; ?>
+          <div class='section pad'>
+            <div class='section-textarea'>
+              <div class='section-textarea__inner'>
+                <div class='section-textarea__inner__title'>
+                  <?php echo $textTitle; ?>
+                </div>
+                <div class='section-textarea__inner__text font-serif'>
+                  <?php echo $text; ?>
+                </div>
+              </div>
+            </div>
           </div>
           <?php
         }
 
-        // related projects (type == index)
+        // related projects (index)
 
         elseif ($type == 'type_related') {
           $projects = $section['related_projects'];
@@ -111,24 +143,29 @@
             'post__in' => $ids
           ));
           ?>
-          <div class='grid text-black index-grid index-grid-related grid__full'>
-            <div class='grid__full text-centre text-large padding text-black'>
+          <div class='section'>
+            <div class='section-related grid__full background-white text-centre text-large text-black'>
               RELATED PROJECTS
             </div>
-            <?php
-            if ($query->have_posts()) {
-        			while ($query->have_posts()) {
-        				$query->the_post();
-                get_template_part('grid/index-single-home');
+            <div class='grid index-grid text-black index-grid-related'>
+              <?php
+              if ($query->have_posts()) {
+          			while ($query->have_posts()) {
+          				$query->the_post();
+                  get_template_part('grid/index-single-home');
+                }
               }
-            }
-            ?>
+              ?>
+            </div>
           </div>
           <?php
         }
-      }
-    }
-  }
+      ?>
+      <?php
+
+      endforeach;
+    endwhile;
+  endif;
 ?>
   </div>
 </div>

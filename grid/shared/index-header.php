@@ -2,7 +2,7 @@
   $id = get_the_ID();
   $type = get_field('menu_type');
   $categories = get_the_category();
-  $firstCategory = (sizeof($categories) > 0) ? '(' . $categories[0]->name . ')' : '&nbsp;';
+  $itemType = get_field('item_type');
   $title = get_the_title();
   $letters = array();
   $end = sizeof($categories) - 1;
@@ -34,5 +34,5 @@
   }?>' data-post='<?php echo $id; ?>'>
   <div class='grid__quarter'>(<?php echo $lettersText; ?>)</div>
   <div class='grid__half text-centre reveal'><?php echo $title; ?></div>
-  <div class='grid__quarter text-right'><?php echo $firstCategory; ?></div>
+  <div class='grid__quarter text-right'>(<?php echo $itemType; ?>)</div>
 </div>

@@ -1,5 +1,6 @@
 <?php
 	$title = get_the_title();
+	$titleCentre = (is_single()) ? true : false;
 ?>
 
 <div class='nav mobile-hide <?php if (is_home()){ echo 'nav-index'; } ?>'>
@@ -9,7 +10,7 @@
 				<a href='<?php echo get_site_url(); ?>/'>TEUBER KOHLHOFF</a>
 			</div>
 			<div class='nav__list__item'>
-				<?php if (!is_home()): ?>
+				<?php if (!is_home() && !$titleCentre): ?>
 					<div class='uppercase'><?php echo $title; ?></div>
 				<?php else: ?>
 					<div id='current-section'></div>
@@ -17,6 +18,9 @@
 			</div>
 		</div>
 		<div class='grid__third text-centre'>
+			<?php if ($titleCentre): ?>
+				<div class='uppercase'><?php echo $title; ?></div>
+			<?php endif; ?>
 		</div>
 		<div class='grid__third text-right'>
 			<div class='nav__list__item nav__filter clickable'>

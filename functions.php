@@ -1,4 +1,10 @@
 <?php
+// troubleshooting
+// https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
 
 function ajax_load(){
   header("Content-Type: text/html");
@@ -25,7 +31,6 @@ function ajax_load(){
           if ($count % 2 == 0) {
             echo "<div class='grid__divider'></div>";
           }
-
           get_template_part('grid/index-single-home');
         } else if ($type == 'editorials') {
           echo "<div class='divider'></div>";
@@ -127,8 +132,7 @@ function teuber_filter_wp_title( $title )
 }
 
 add_action( 'widgets_init', 'teuber_widgets_init' );
-function teuber_widgets_init()
-{
+function teuber_widgets_init(){
 	register_sidebar( array (
 		'name' => __( 'Sidebar Widget Area', 'teuber' ),
 		'id' => 'primary-widget-area',
@@ -139,8 +143,7 @@ function teuber_widgets_init()
 	));
 }
 
-function teuber_custom_pings( $comment )
-{
+function teuber_custom_pings( $comment ){
 	$GLOBALS['comment'] = $comment;
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>

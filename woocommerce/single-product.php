@@ -22,8 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-FUCK !
-
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -37,6 +35,7 @@ FUCK !
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php wc_get_template_part( 'content', 'single-product' ); ?>
+			HELLO WORLD
 
 		<?php endwhile; // end of the loop. ?>
 

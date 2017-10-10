@@ -31,6 +31,27 @@
 	}
 }
 
+.mobile-show {
+	display: none;
+	@media screen and (max-width: $mobile) {
+		display: block;
+	}
+}
+
+.tablet-hide {
+	@media screen and (max-width: $tablet) {
+		display: none;
+	}
+}
+
+.tablet-show {
+	display: none;
+
+	@media screen and (max-width: $tablet) {
+		display: block;
+	}
+}
+
 .transition {
 	transition: $transition;
 }
@@ -58,6 +79,10 @@
 
 .text-small {
 	font-size: $fontSizeSmall;
+}
+
+.nowrap {
+	white-space: nowrap;
 }
 
 .transparent {
