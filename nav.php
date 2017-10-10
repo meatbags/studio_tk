@@ -1,5 +1,5 @@
 <?php
-	$title = get_the_title();
+	$title = is_shop() ? 'SHOP' : get_the_title();
 	$titleCentre = (is_single()) ? true : false;
 ?>
 

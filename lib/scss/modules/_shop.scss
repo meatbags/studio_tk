@@ -1,0 +1,34 @@
+.shop-grid {
+  padding-top: $space4;
+	padding-bottom: $space2;
+	padding-left: $space3;
+	padding-right: $space3;
+	background: $colourBackground;
+
+  .shop-grid__product {
+    padding-top: $space3;
+    padding-bottom: $space3;
+
+    .shop-grid__product__inner {
+      padding-left: $space6;
+      padding-right: $space6;
+
+      .shop-grid__product__image {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .shop-grid__product__description {
+        padding-top: $space;
+      }
+    }
+
+    &:nth-child(3n - 2) {
+      .shop-grid__product__inner {
+        border-right: $border;
+      }
+    }
+  }
+}
