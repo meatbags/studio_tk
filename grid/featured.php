@@ -27,6 +27,13 @@
 			</a>
 		</div>
 	</div>
+	<div class='grid__sixth item'>
+		<div class='item__inner'>
+			<a href='<?php echo $link; ?>'>
+				<?php echo $img; ?>
+			</a>
+		</div>
+	</div>
 
 	<?php endwhile; endif; ?>
 </div>

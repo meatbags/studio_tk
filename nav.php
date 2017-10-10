@@ -41,10 +41,10 @@
 				</div>
 				<?php if (is_home() || $title == 'Index') : ?>
 					<div class='grid__twothirds border-left padding-left'>
-						<div class='filter clickable' data-filter='textiles'>(A) TEXTILES</div>
-						<div class='filter clickable' data-filter='print'>(B) PRINT</div>
-						<div class='filter clickable' data-filter='identities'>(C) IDENTITIES</div>
-						<div class='filter clickable' data-filter='digital'>(D) DIGITAL</div>
+						<div class='filter clickable' data-filter='filter-textiles'>(A) TEXTILES</div>
+						<div class='filter clickable' data-filter='filter-print'>(B) PRINT</div>
+						<div class='filter clickable' data-filter='filter-identities'>(C) IDENTITIES</div>
+						<div class='filter clickable' data-filter='filter-digital'>(D) DIGITAL</div>
 					</div>
 				<?php endif; ?>
 			</div>

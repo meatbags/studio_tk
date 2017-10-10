@@ -1,51 +1,30 @@
 <?php
   $id = get_the_ID();
-  $title = get_the_title();
+  $url = '#' . get_the_title();
   $type = get_field('menu_type');
+  $classes = ($type != 'type_inspector') ? 'index-trigger filter-item ' : 'filter-item ';
   $categories = get_the_category();
-  $cat = (sizeof($categories) > 0) ? '(' . $categories[0]->name . ')' : '&nbsp;';
-  $count = 'A';
-  $url = '#' . $title; //get_the_permalink()
+  foreach ($categories as $cat) {
+    $classes .= 'filter-' . $cat->slug . ' ';
+  }
 ?>
 
-<div class='item grid__half grid__item <?php if ($type != 'type_inspector'){echo 'index-trigger';}?>' data-post='<?php echo $id; ?>'>
+<div data-post='<?php echo $id; ?>' class='item grid__half height-75 <?php echo $classes; ?>'>
   <?php if ($type != 'type_inspector'): ?>
-  <a href='<?php echo $url; ?>'>
-  <?php endif; ?>
+    <a href='<?php echo $url; ?>'>
+      <div class='item__inner reveal-children'>
+      <?php
+        get_template_part('grid/shared/index-header');
+        get_template_part('grid/shared/index-body');
+      ?>
+      </div>
+    </a>
+  <?php else: ?>
     <div class='item__inner reveal-children'>
-      <?php if ($type == 'type_inspector'): ?>
-        <a href='<?php echo $url; ?>'>
-      <?php endif; ?>
-      <div class='grid text-medium uppercase <?php if ($type == 'type_inspector'){echo 'index-trigger';}?>' data-post='<?php echo $id; ?>'>
-        <div class='grid__third'>(<?php echo $count; ?>)</div>
-        <div class='grid__third text-centre reveal'><?php echo $title; ?></div>
-        <div class='grid__third text-right'><?php echo $cat; ?></div>
-      </div>
-      <?php if ($type == 'type_inspector'): ?>
-        </a>
-      <?php endif; ?>
-      <div class='item__image parallax parallax-once parallax-rise parallax-fade'>
-        <?php
-          if ($type == 'type_static') :
-            $image = get_field('image_single')['sizes']['large'];
-            ?>
-            <img class='img-fit' src='<?php echo $image;?>' />
-        <?php
-          elseif ($type == 'type_hover') :
-            $images = get_field('image_double');
-            $src1 = $images[0]['hover_image']['sizes']['large'];
-            $src2 = $images[1]['hover_image']['sizes']['large'];
-            ?>
-            <img class='reveal inverted display-none img-fit' src='<?php echo $src1;?>' />
-            <img class='reveal display-none img-fit' src='<?php echo $src2; ?>' />
-        <?php
-          elseif ($type == 'type_inspector') :
-            get_template_part('inspector/inspector');
-          endif;
-        ?>
-      </div>
+      <a href='<?php echo $url; ?>'>
+        <?php get_template_part('grid/shared/index-header'); ?>
+      </a>
+      <?php get_template_part('grid/shared/index-body'); ?>
     </div>
-  <?php if ($type != 'type_inspector'): ?>
-  </a>
   <?php endif; ?>
 </div>

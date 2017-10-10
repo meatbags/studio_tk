@@ -21,10 +21,10 @@
           <img src='<?php echo $image;?>' />
         </div>
         <div class='item__inner__desc'>
-          <div class='uppercase'>
+          <div class='item__inner__desc__title uppercase text-small'>
             <?php echo $title; ?>
           </div>
-          <div class='font-serif'>
+          <div class='item__inner__desc__content font-serif text-small'>
             <?php echo $excerpt; ?>
           </div>
         </div>

@@ -74,6 +74,12 @@
 			padding-left: $space3;
 			padding-right: 0;
 		}
+
+		.filter {
+			&.active {
+				opacity: 0.5;
+			}
+		}
 	}
 
 	&.open {

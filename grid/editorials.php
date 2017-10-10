@@ -17,16 +17,16 @@
 
 				get_template_part('grid/editorial-single');
 
-				if ($count != $postCount - 1) {
-					echo "<div class='divider'></div>";
-				}
-
+				if ($count != $postCount - 1):?>
+					<div class='divider'></div>
+				<?php endif;
 				$count++;
 			}
 		}
 
-		if (is_home()) {
-			echo "<div id='load-more-editorials' class='grid__full transition text-normal text-centre clickable'>(LOAD MORE)</div>";
-		}
-	?>
+		if (is_home()): ?>
+			<div id='load-more-editorials' class='grid__full transition text-normal text-centre clickable'>(LOAD MORE)</div>
+		<?php
+			endif;
+			?>
 </div>

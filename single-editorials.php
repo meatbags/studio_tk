@@ -17,10 +17,10 @@
       <div class='grid__full section-full'>
         <img src='<?php echo $mainImage?>' />
       </div>
-      <div class='grid__quarter text-right padding text-large'>
+      <div class='grid__quarter editorial__date text-right text-large'>
         (<?php echo $date; ?>)
       </div>
-      <div class='grid__half padding text-medium'>
+      <div class='grid__half editorial__description padding text-mediumsmall font-serif'>
         <?php echo $content; ?>
       </div>
       <div class='grid__quarter'></div>
