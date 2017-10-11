@@ -1,7 +1,12 @@
 	</div> <!-- /wrapper -->
 </div> <!-- /content -->
 
-<div class="footer <?php echo ((is_page('Editorials')) ? 'footer-alt': '');?>" role="contentinfo">
+<div role="contentinfo" class="footer <?php
+		if (is_page('Editorials')) {
+			echo 'footer-alt';
+		} elseif (is_product()) {
+			echo 'footer-product';
+		} ?>">
 	<div class='footer__inner grid'>
 		<div class='grid__third text-left' id="copyright">
 			&copy; 2017 TEUBER KOHLHOFF <span class='tablet-hide'>I ALL RIGHTS RESERVED</span>

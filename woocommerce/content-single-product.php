@@ -1,84 +1,150 @@
 <?php
-/**
- * The template for displaying product content in the single-product.php template
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/content-single-product.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     3.0.0
- */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+if (!defined('ABSPATH')) {
+	exit;
 }
 
+global $product;
+global $post;
+
+$id = get_the_ID();
+$name = $product->get_name();
+$price = $product->get_price() . ' ' . get_woocommerce_currency_symbol();
+$link = get_the_permalink();
+$image = $product->get_image('large');
+$desc = $product->get_description();
+$material = get_field('size_and_material');
+$attachmentIds = $product->get_gallery_image_ids();
+$hasVariations = $product->has_child();
+
+if ($hasVariations) {
+	//$variations = $product->get_variation_attributes();
+	$availableVariations = $product->get_available_variations();
+	$attributes = $product->get_variation_attributes();
+}
 ?>
 
-<?php
-	/**
-	 * woocommerce_before_single_product hook.
-	 *
-	 * @hooked wc_print_notices - 10
-	 */
-	 do_action( 'woocommerce_before_single_product' );
+<div id="product-<?php the_ID(); ?>" class='product'>
+	<div class='product__info'>
+		<div class='product__info__inner text-small'>
+			<div class='product__info__price'><?php echo $price; ?></div>
 
-	 if ( post_password_required() ) {
-	 	echo get_the_password_form();
-	 	return;
-	 }
-?>
+			<?php if ($hasVariations):
+				$count = 0;
+				do_action('woocommerce_before_add_to_cart_form');
+				?>
 
-<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<!-- VARIATION PRODUCT FORM -->
 
-	<?php
-		/**
-		 * woocommerce_before_single_product_summary hook.
-		 *
-		 * @hooked woocommerce_show_product_sale_flash - 10
-		 * @hooked woocommerce_show_product_images - 20
-		 */
-		do_action( 'woocommerce_before_single_product_summary' );
-	?>
+				<form
+					class='variations_form cart'
+					method="post"
+					enctype='multipart/form-data'
+					data-product_id="<?php echo absint( $product->get_id() ); ?>"
+					data-product_variations="<?php echo htmlspecialchars(wp_json_encode($availableVariations))?>">
+					<?php
+						do_action( 'woocommerce_before_add_to_cart_button' );
+						do_action( 'woocommerce_before_single_variation' );
+						//get_template_part('woocommerce/single-product/add-to-cart/variation');
+					?>
+					<div class='product__info__addtocart border'>
+						<div class='product__info__form-message'>
+							<?php do_action('woocommerce_before_single_product'); ?>
+						</div>
+						<div class="woocommerce-variation-add-to-cart variations_button">
+							<button type="submit" class="single_add_to_cart_button button alt">ADD TO BAG</button>
+							<input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" />
+							<input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>" />
+							<input type="hidden" name="variation_id" class="variation_id" value="0" />
+						</div>
+					</div>
+					<?php
+						do_action( 'woocommerce_after_single_variation' );
+						do_action( 'woocommerce_after_add_to_cart_button' );
+						do_action( 'woocommerce_before_variations_form' );
 
-	<div class="summary entry-summary">
+						foreach ($attributes as $name => $options):
+							$labelName = wc_attribute_label($name);
+							$clean = sanitize_title($name);
+							$attr = 'attribute_' . $clean;
+							$selected = isset($_REQUEST[$attr])
+								? wc_clean(stripslashes(urldecode($_REQUEST[$attr])))
+								: $product->get_variation_default_attribute($name);
+							?>
+							<div class='product__info__colour padding-half padding-top padding-bottom border-bottom'>
+								<div class='label'>
+									<label for="<?php echo $clean; ?>" class='uppercase'>
+										<?php echo $labelName; ?>
+									</label>
+								</div>
+								<br />
+								<div class='value'>
+								<?php
+									wc_dropdown_variation_attribute_options(array(
+										'options' => $options,
+										'attribute' => $name,
+										'product' => $product,
+										'selected' => $selected
+									));
+								?>
+								</div>
+							</div>
+					<?php
+						endforeach;
+						do_action( 'woocommerce_after_variations_form' );
+					?>
+				</form>
 
+				<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
+				<?php //get_template_part('woocommerce/single-product/add-to-cart/variable'); ?>
+			<?php else: ?>
+
+			<!-- SINGLE VARIATION FORM -->
+
+			<div class='product__info__addtocart border'>
+				<div class='product__info__form-message'>
+					<?php do_action('woocommerce_before_single_product'); ?>
+				</div>
+				<?php
+					// woocommerce/single-product/add-to-cart/simple
+					if ($product->is_in_stock()):
+						do_action( 'woocommerce_before_add_to_cart_form' ); ?>
+						<form class="cart" method="post" enctype='multipart/form-data'>
+							<?php do_action('woocommerce_before_add_to_cart_button'); ?>
+							<button type="submit"
+								name="add-to-cart"
+								value="<?php echo esc_attr( $product->get_id() ); ?>"
+								class="single_add_to_cart_button button alt">
+								ADD TO BAG
+							</button>
+							<?php do_action('woocommerce_after_add_to_cart_button'); ?>
+						</form>
+						<?php do_action('woocommerce_after_add_to_cart_form'); ?>
+					<?php endif; ?>
+			</div>
+			<?php endif; ?>
+
+			<div class='product__info__description padding-half padding-top padding-bottom border-bottom'>
+				DESCRIPTION
+				<br/><br/>
+				<?php echo $desc; ?>
+			</div>
+			<?php if ($material != ''): ?>
+				<div class='product__info__note padding-half padding-top padding-bottom'>
+					SIZE & MATERIAL
+					<br />
+					<?php echo $material; ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+
+	<div class='product__gallery'>
 		<?php
-			/**
-			 * woocommerce_single_product_summary hook.
-			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_price - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
-			 * @hooked woocommerce_template_single_add_to_cart - 30
-			 * @hooked woocommerce_template_single_meta - 40
-			 * @hooked woocommerce_template_single_sharing - 50
-			 * @hooked WC_Structured_Data::generate_product_data() - 60
-			 */
-			do_action( 'woocommerce_single_product_summary' );
-		?>
-
-	</div><!-- .summary -->
-
-	<?php
-		/**
-		 * woocommerce_after_single_product_summary hook.
-		 *
-		 * @hooked woocommerce_output_product_data_tabs - 10
-		 * @hooked woocommerce_upsell_display - 15
-		 * @hooked woocommerce_output_related_products - 20
-		 */
-		do_action( 'woocommerce_after_single_product_summary' );
-	?>
-
-</div><!-- #product-<?php the_ID(); ?> -->
-
-<?php do_action( 'woocommerce_after_single_product' ); ?>
+		foreach($attachmentIds as $attachmentId):
+      $imageUrl = wp_get_attachment_url( $attachmentId ); ?>
+			<div class='product__gallery__image'>
+				<img src='<?php echo $imageUrl; ?>'/>
+			</div>
+		<?php endforeach; ?>
+	</div>
+</div>

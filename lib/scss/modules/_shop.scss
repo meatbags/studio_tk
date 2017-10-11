@@ -1,3 +1,5 @@
+$colourSize: 20px;
+
 .shop-grid {
   padding-top: $space4;
 	padding-bottom: $space2;
@@ -22,6 +24,22 @@
 
       .shop-grid__product__description {
         padding-top: $space;
+      }
+
+      .shop-grid__product__colour {
+        width: $colourSize;
+        height: $colourSize;
+        border-radius: $colourSize;
+        display: inline-block;
+        margin-left: $space / 4;
+        transition: $transitionFast;
+      }
+
+      .shop-grid__product__price {
+        height: 100%;
+        display: inline-flex;
+        align-items: flex-start;
+        margin-left: $space2;
       }
     }
 
