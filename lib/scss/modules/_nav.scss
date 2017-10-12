@@ -13,6 +13,11 @@
 		padding-left: $space3;
 		padding-right: $space3;
 
+		@media screen and (max-width: $mobile) {
+			padding-left: $space;
+			padding-right: $space;
+		}
+
 		.nav__list__item {
 			display: inline-block;
 
@@ -60,6 +65,11 @@
 	transform: translateX(50vw);
 	transition: transform $transition;
 
+	@media screen and (max-width: $mobile) {
+		width: 100vw;
+		transform: translateX(100vw);
+	}
+
 	.menu__list {
 		height: 100%;
 		width: 100%;
@@ -73,6 +83,14 @@
 			padding: $space;
 			padding-left: $space3;
 			padding-right: 0;
+
+			@media screen and (max-width: $mobile) {
+				margin: 0;
+				margin-left: $space;
+				margin-right: $space;
+				padding-left: 0;
+				padding-right: 0;
+			}
 		}
 
 		.filter {

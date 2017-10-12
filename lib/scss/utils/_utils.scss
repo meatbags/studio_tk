@@ -77,10 +77,6 @@
 	text-align: left;
 }
 
-.text-small {
-	font-size: $fontSizeSmall;
-}
-
 .nowrap {
 	white-space: nowrap;
 }
@@ -103,27 +99,59 @@
 
 .text-tiny {
 	font-size: $fontSizeTiny;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeTinyMobile;
+	}
+}
+
+.text-small {
+	font-size: $fontSizeSmall;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeSmallMobile;
+	}
 }
 
 .text-normal {
 	font-size: $fontSize;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeMobile;
+	}
 }
 
 .text-mediumsmall {
 	font-size: $fontSizeMediumSmall;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeMediumSmallMobile;
+	}
 }
 
 .text-medium {
 	font-size: $fontSizeMedium;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeMediumMobile;
+	}
 }
 
 .text-large {
 	font-size: $fontSizeLarge;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeLargeMobile;
+	}
 }
 
 .text-huge {
 	font-size: $fontSizeHuge;
 	font-weight: bold;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeHugeMobile;
+	}
 }
 
 .font-serif {

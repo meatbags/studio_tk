@@ -12,14 +12,26 @@
 		padding-top: $space;
 		padding-bottom: $space;
 
+		@media screen and (max-width: $mobile) {
+			width: 100%;
+		}
+
 		.item__inner {
 			width: 100%;
 			height: 100%;
 			padding: $space3;
 
+			@media screen and (max-width: $mobile) {
+				padding: $space;
+			}
+
 			.item__inner__date {
 				position: absolute;
 				padding: $space2;
+
+				@media screen and (max-width: $mobile) {
+					padding: $space/2;
+				}
 			}
 
 			.item__inner__image {

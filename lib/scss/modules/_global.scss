@@ -1,6 +1,6 @@
 div, * {
 	box-sizing: border-box;
-	//outline: 1px solid rgba(0,0,0,0.05);
+	outline: 1px solid rgba(0,0,0,0.05);
 }
 
 body, html {
@@ -11,6 +11,10 @@ body, html {
 	font-size: $fontSize;
 	letter-spacing: 1px;
 	overflow-x: hidden;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeMobile;
+	}
 
 	&.body-alt {
 		background: $colourAlt;

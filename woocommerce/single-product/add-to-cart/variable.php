@@ -34,9 +34,6 @@ do_action( 'woocommerce_before_add_to_cart_form' );
 	</div>
 	<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 
-
-
-
 	<?php do_action( 'woocommerce_before_variations_form' ); ?>
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>
 		<p class="stock out-of-stock"><?php _e( 'This product is currently out of stock and unavailable.', 'woocommerce' ); ?></p>

@@ -32,7 +32,7 @@
   if ($type == 'type_inspector'){
     echo 'index-trigger';
   }?>' data-post='<?php echo $id; ?>'>
-  <div class='grid__quarter'>(<?php echo $lettersText; ?>)</div>
-  <div class='grid__half text-centre reveal'><?php echo $title; ?></div>
-  <div class='grid__quarter text-right'>(<?php echo $itemType; ?>)</div>
+  <div class='grid__quarter fixed'>(<?php echo $lettersText; ?>)</div>
+  <div class='grid__half text-centre reveal fixed'><?php echo $title; ?></div>
+  <div class='grid__quarter text-right fixed'>(<?php echo $itemType; ?>)</div>
 </div>

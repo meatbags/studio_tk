@@ -19,6 +19,12 @@
 	padding-left: $space3;
 	padding-right: $space3;
 
+	@media screen and (max-width: $mobile) {
+		padding-left: $space;
+		padding-right: $space;
+		padding-top: $space2;
+	}
+
 	.about__inner {
 		padding-left: $space5;
 		padding-right: $space5;
@@ -28,14 +34,23 @@
 		flex-direction: column;
 		align-items: center;
 
+		@media screen and (max-width: $mobile) {
+			padding: 0;
+			text-align: center;
+		}
+
 		.about__inner__text {
-			font-size: $fontSizeLarge;
+
 		}
 
 		.about__inner__subscribe {
 			width: 35%;
 			margin-top: $space3;
 			text-align: center;
+
+			@media screen and (max-width: $mobile) {
+				width: 100%;
+			}
 		}
 	}
 }
@@ -44,10 +59,20 @@
 	padding-left: $space3;
 	padding-right: $space3;
 
+	@media screen and (max-width: $mobile) {
+		padding-left: $space;
+		padding-right: $space;
+		margin-top: $space;
+	}
+
 	.item {
 		padding: $space;
 		height: 250px;
 		background: $lightGrey;
+
+		@media screen and (max-width: $mobile) {
+			height: 100px;
+		}
 
 		.item__inner {
 			width: 100%;

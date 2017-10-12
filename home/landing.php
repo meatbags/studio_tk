@@ -19,7 +19,9 @@
   <div class='landing__title'>
     <div class='landing__title__inner'>
       <img src='<?php echo get_template_directory_uri(); ?>/lib/img/logo.svg' />
-      <?php echo get_bloginfo('description'); ?>
+      <div class='landing__title__inner__text'>
+        <?php echo get_bloginfo('description'); ?>
+      </div>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-$colourSize: 20px;
+$colourSize: 18px;
 
 .shop-grid {
   padding-top: $space4;
@@ -24,6 +24,10 @@ $colourSize: 20px;
 
       .shop-grid__product__description {
         padding-top: $space;
+      }
+
+      .colour__swatch__bank {
+        display: none;
       }
 
       .shop-grid__product__colour {

@@ -16,8 +16,12 @@
 	$price = $product->get_price() . ' ' . get_woocommerce_currency_symbol();
 	$link = get_the_permalink();
 	$image = $product->get_image('large');
-	$colours = get_the_terms($post, 'product_color');
-	$colourLib = get_option('nm_taxonomy_colors');
+	$hasVariations = $product->has_child();
+
+	if ($hasVariations) {
+		$availableVariations = $product->get_available_variations();
+		$attributes = $product->get_variation_attributes();
+	}
 ?>
 
 <div class='grid__half shop-grid__product reveal-children'>
@@ -32,29 +36,30 @@
 				</div>
 				<div class='grid__half text-right'>
 					<?php
-						if (isset($colours) && is_array($colours)) {
-							foreach($colours as $col) {
-								$termId = $col->term_id;
-								$parent = $col->parent;
-								$primary = $colourLib[$termId];
-								$style = '';
-
-								if ($parent != 0) {
-									$primary = $colourLib[$parent];
-									$secondary = $colourLib[$termId];
-									$style = 'border: 3px solid ' . $secondary . ';background-color: ' . $primary . ';';
-								} elseif ($primary == '#ffffff') {
-									$secondary = '#eee';
-									$style = 'border: 3px solid ' . $secondary . ';background-color: ' . $primary . ';';
-								} else {
-									$style = 'background-color: ' . $primary . ';';
-								}
+						if ($hasVariations):
+							foreach ($attributes as $name => $options):
+								$labelName = wc_attribute_label($name);
+								$clean = sanitize_title($name);
+								$attr = 'attribute_' . $clean;
+								$selected = isset($_REQUEST[$attr])
+									? wc_clean(stripslashes(urldecode($_REQUEST[$attr])))
+									: $product->get_variation_default_attribute($name);
 						?>
-							<div class='shop-grid__product__colour reveal' style='<?php echo $style; ?>'></div>
+							<div class='colour__swatch__bank'>
+							<?php
+								$arr = wc_dropdown_variation_attribute_options(array(
+									'options' => $options,
+									'attribute' => $name,
+									'product' => $product,
+									'selected' => $selected
+								));
+								var_dump($arr);
+							?>
+							</div>
 						<?php
-							}
-						}
-					?>
+							endforeach;
+							endif;
+						?>
 					<div class='shop-grid__product__price'>
 						<?php echo $price; ?>
 					</div>

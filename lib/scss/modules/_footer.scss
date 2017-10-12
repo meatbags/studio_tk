@@ -2,8 +2,12 @@
 	width: 100%;
 	margin-top: $space;
 	overflow: hidden;
-	padding: $space * 2;
+	padding: $space2;
 	padding-top: $space;
+
+	@media screen and (max-width: $mobile) {
+		padding: $space;
+	}
 
 	.footer__inner {
 		width: 100%;

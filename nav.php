@@ -3,9 +3,9 @@
 	$titleCentre = (is_single()) ? true : false;
 ?>
 
-<div class='nav mobile-hide <?php if (is_home()){ echo 'nav-index'; } ?>'>
+<div class='nav <?php if (is_home()){ echo 'nav-index'; } ?>'>
 	<div class='grid nav__list'>
-		<div class='grid__third text-left'>
+		<div class='grid__third fixed text-left'>
 			<div class='nav__list__item'>
 				<a href='<?php echo get_site_url(); ?>/'>TEUBER KOHLHOFF</a>
 			</div>
@@ -13,16 +13,16 @@
 				<?php if (!is_home() && !$titleCentre): ?>
 					<div class='uppercase'><?php echo $title; ?></div>
 				<?php else: ?>
-					<div id='current-section'></div>
+					<div id='current-section mobile-hide'></div>
 				<?php endif; ?>
 			</div>
 		</div>
-		<div class='grid__third text-centre'>
+		<div class='grid__third fixed text-centre'>
 			<?php if ($titleCentre): ?>
 				<div class='uppercase'><?php echo $title; ?></div>
 			<?php endif; ?>
 		</div>
-		<div class='grid__third text-right'>
+		<div class='grid__third fixed text-right'>
 			<div class='nav__list__item nav__filter clickable'>
 				FILTER
 			</div>
@@ -40,11 +40,11 @@
 		</div>
 		<div class='item'>
 			<div class='grid'>
-				<div class='grid__third'>
+				<div class='grid__third fixed'>
 					<a href='<?php echo get_site_url(); ?>/index/'>INDEX</a>
 				</div>
 				<?php if (is_home() || $title == 'Index') : ?>
-					<div class='grid__twothirds border-left padding-left'>
+					<div class='grid__twothirds fixed border-left padding-left'>
 						<div class='filter clickable' data-filter='filter-textiles'>(A) TEXTILES</div>
 						<div class='filter clickable' data-filter='filter-print'>(B) PRINT</div>
 						<div class='filter clickable' data-filter='filter-identities'>(C) IDENTITIES</div>

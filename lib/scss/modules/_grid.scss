@@ -54,6 +54,10 @@
 	.grid__divider {
 		width: 100%;
 		border-bottom: $border;
+
+		@media screen and (max-width: $mobile) {
+			display: none;
+		}
 	}
 
 	.grid__expand {
@@ -63,18 +67,34 @@
 	@media screen and (max-width: $mobile) {
 		.grid__quarter {
 			width: 50%;
+
+			&.fixed {
+				width: 25%;
+			}
 		}
 
 		.grid__third {
 			width: 100%;
+
+			&.fixed {
+				width: 33.33%;
+			}
 		}
 
 		.grid__half {
 			width: 100%;
+
+			&.fixed {
+				width: 50%;
+			}
 		}
 
 		.grid__sixth {
-			width: 33.33%
+			width: 33.33%;
+
+			&.fixed {
+				width: 16.66%;
+			}
 		}
 	}
 }
