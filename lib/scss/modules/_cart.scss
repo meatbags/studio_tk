@@ -1,8 +1,131 @@
 .cart-grid {
   padding-top: $space4;
   padding-left: $space2;
+  padding-right: $space2;
 
+  .cart-grid__columns {
+    width: 100%;
+    padding-bottom: $space / 2;
+  }
 
+  .cart-grid__totals {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: $space;
+    padding-bottom: $space;
+
+    .cart_totals {
+      width: 33.33%;
+
+      table {
+        width: 100%;
+        text-align: right;
+
+        tr {
+          width: 100%;
+
+          th {
+            width: 66%;
+          }
+
+          td {
+            width: 33%;
+          }
+
+          &.order-total {
+          }
+        }
+      }
+
+      .wc-proceed-to-checkout {
+        width: 100%;
+        text-align: right;
+        border: $border;
+
+        .checkout-button {
+          width: 100%;
+          display: flex;
+          padding: $space / 2;
+
+          span {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .cart-grid__actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: $space;
+    padding-bottom: $space;
+
+    .actions {
+      width: 33.33%;
+
+      .coupon {
+        padding-bottom: $space/4;
+
+        .pad {
+          padding-right: $space / 4;
+        }
+      }
+
+      input {
+        text-align: right;
+        width: 100%;
+      }
+
+      .actions__coupon {
+        text-align: right;
+      }
+
+      .button {
+        cursor: pointer;
+      }
+    }
+
+    input {
+      background: none;
+      border: $border;
+      font-family: $fontStack;
+      padding: $space / 2;
+    }
+  }
+
+  .cart-grid__products {
+    width: 100%;
+
+    .cart__product {
+      border-bottom: $border;
+      padding-top: $space;
+      padding-bottom: $space;
+    }
+
+    .product-price, .product-quantity, .product-subtotal {
+      //padding-right: $space / 2;
+      //padding-left: $space / 2;
+    }
+
+    input[type=number] {
+      width: 50%;
+      text-align: right;
+      border: none;
+      font-family: $fontStack;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+       opacity: 1;
+    }
+
+    .remove {
+      border-bottom: $border;
+    }
+  }
 
   &.cart-empty {
     a {
