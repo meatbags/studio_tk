@@ -37,11 +37,13 @@ if ($hasVariations) {
 		<div class='product__info__inner text-small'>
 			<div class='product__info__price mobile-hide'><?php echo $price; ?></div>
 			<div class='product__info__price-mobile mobile-show'>
-				<div class='left'>
-					<?php echo $name; ?>
-				</div>
-				<div class='right'>
-					<?php echo $price; ?>
+				<div class='product__info__price-mobile__inner'>
+					<div class='left'>
+						<?php echo $name; ?>
+					</div>
+					<div class='right'>
+						<?php echo $price; ?>
+					</div>
 				</div>
 			</div>
 

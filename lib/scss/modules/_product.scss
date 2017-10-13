@@ -28,16 +28,20 @@ $colourSize: 24px;
       }
 
       .product__info__price-mobile {
-        display: flex;
+        width: 100%;
 
-        .left {
-          text-align: left;
-          width: 50%;
-        }
+        .product__info__price-mobile__inner {
+          display: flex;
+          
+          .left {
+            text-align: left;
+            width: 50%;
+          }
 
-        .right {
-          text-align: right;
-          width: 50%;
+          .right {
+            text-align: right;
+            width: 50%;
+          }
         }
       }
 
