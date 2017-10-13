@@ -14,11 +14,31 @@ $colourSize: 24px;
     padding-top: $space;
     padding-right: $space8;
 
+    @media screen and (max-width: $mobile) {
+      position: relative;
+      width: 100%;
+      padding: $space;
+    }
+
     .product__info__inner {
       width: 100%;
 
       .product__info__price {
         padding-left: $space/2;
+      }
+
+      .product__info__price-mobile {
+        display: flex;
+
+        .left {
+          text-align: left;
+          width: 50%;
+        }
+
+        .right {
+          text-align: right;
+          width: 50%;
+        }
       }
 
       .product__info__form-message {
@@ -45,6 +65,10 @@ $colourSize: 24px;
         }
 
         margin-top: $space3;
+
+        @media screen and (max-width: $mobile) {
+          margin-top: $space;
+        }
 
         button {
           cursor: pointer;
@@ -79,6 +103,11 @@ $colourSize: 24px;
 
   .product__gallery {
     width: 100%;
+
+    @media screen and (max-width: $mobile) {
+      padding-top: $space2;
+      background: $lightGrey;
+    }
 
     .product__gallery__image {
       width: 100%;

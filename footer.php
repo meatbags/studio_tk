@@ -44,7 +44,7 @@
 		<div class='grid__full text-centre' id="copyright">
 			&copy; 2017 TEUBER KOHLHOFF I ALL RIGHTS RESERVED
 		</div>
-		<div class='grid__full text-centre' id="copyright">
+		<div class='grid__full padding-top-half text-centre' id="copyright">
 			<a target='_blank' href='https://www.instagram.com/teuberkohlhoff/'>INSTAGRAM</a>&nbsp;I&nbsp;
 			<a target='_blank' href='https://www.facebook.com/teuberkohlhoff/'>FACEBOOK</a>&nbsp;I&nbsp;
 			<a href='<?php echo get_site_url(); ?>/info/'>IMPRINT</a>&nbsp;I&nbsp;

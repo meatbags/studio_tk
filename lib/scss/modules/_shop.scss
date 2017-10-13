@@ -7,13 +7,35 @@ $colourSize: 18px;
 	padding-right: $space3;
 	background: $colourBackground;
 
+  @media screen and (max-width: $mobile) {
+    padding-left: $space;
+    padding-right: $space;
+  }
+
   .shop-grid__product {
     padding-top: $space3;
     padding-bottom: $space3;
 
+    @media screen and (max-width: $mobile) {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: $space2;
+      padding-bottom: $space2;
+      border-bottom: $border;
+    }
+
+    &:nth-last-of-type(1) {
+      border-bottom: none;
+    }
+
     .shop-grid__product__inner {
       padding-left: $space6;
       padding-right: $space6;
+
+      @media screen and (max-width: $mobile) {
+        padding-left: $space;
+        padding-right: $space;
+      }
 
       .shop-grid__product__image {
         img {
@@ -50,6 +72,10 @@ $colourSize: 18px;
     &:nth-child(3n - 2) {
       .shop-grid__product__inner {
         border-right: $border;
+
+        @media screen and (max-width: $mobile) {
+          border-right: none;
+        }
       }
     }
   }

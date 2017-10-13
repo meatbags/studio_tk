@@ -10,7 +10,7 @@
   }
 ?>
 
-<div class='item grid__half height-75 <?php echo $classes; ?>'>
+<div class='item grid__half responsive height-75 <?php echo $classes; ?>'>
   <?php if ($type != 'type_inspector'): ?>
     <a href='<?php echo $url; ?>'>
       <div class='item__inner reveal-children'>

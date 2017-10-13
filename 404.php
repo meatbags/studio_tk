@@ -1,5 +1,5 @@
 <?php get_header(); ?>
 
-404
+<div class='fallback'>404</div>
 
 <?php get_footer(); ?>

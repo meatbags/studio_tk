@@ -108,6 +108,12 @@
         border-bottom: $border;
       }
     }
+
+    &:nth-last-of-type(1) {
+      @media screen and (max-width: $mobile) {
+       border-bottom: none;
+      }
+    }
 	}
 
   .index__load-more {

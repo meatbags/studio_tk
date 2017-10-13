@@ -16,7 +16,7 @@
     <?php foreach ($sections as $section):
       $letter = $letters[$count % sizeof($letters)];
       ?>
-      <div class='grid__half'>
+      <div class='grid__half responsive'>
         <div class='grid'>
           <div class='grid__quarter'>(<?php echo $letter; ?>)</div>
           <div class='grid__threequarters text-right'>

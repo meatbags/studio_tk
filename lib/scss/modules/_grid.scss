@@ -21,10 +21,22 @@
 
 	.grid__half {
 		width: 50%;
+
+		&.responsive {
+			@media screen and (max-width: $mobile) {
+				width: 100%;
+			}
+		}
 	}
 
 	.grid__quarter {
 		width: 25%;
+
+		&.responsive {
+			@media screen and (max-width: $mobile) {
+				//width: 50%;
+			}
+		}
 	}
 
 	.grid__third {
@@ -45,10 +57,22 @@
 
 	.grid__threefifths {
 		width: 60%;
+
+		&.responsive {
+			@media screen and (max-width: $mobile) {
+				width: 100%;
+			}
+		}
 	}
 
 	.grid__sixth {
 		width: 16.666%;
+
+		&.responsive {
+			@media screen and (max-width: $mobile) {
+				width: 50%;
+			}
+		}
 	}
 
 	.grid__divider {
@@ -62,39 +86,5 @@
 
 	.grid__expand {
 		flex: 1;
-	}
-
-	@media screen and (max-width: $mobile) {
-		.grid__quarter {
-			width: 50%;
-
-			&.fixed {
-				width: 25%;
-			}
-		}
-
-		.grid__third {
-			width: 100%;
-
-			&.fixed {
-				width: 33.33%;
-			}
-		}
-
-		.grid__half {
-			width: 100%;
-
-			&.fixed {
-				width: 50%;
-			}
-		}
-
-		.grid__sixth {
-			width: 33.33%;
-
-			&.fixed {
-				width: 16.66%;
-			}
-		}
 	}
 }

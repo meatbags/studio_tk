@@ -22,6 +22,21 @@ body, html {
 	}
 }
 
+.fallback {
+	margin-top: $space3;
+	padding: $space3;
+
+	@media screen and (max-width: $mobile) {
+		padding: $space;
+	}
+
+	input {
+		background-color: transparent;
+		border: $border;
+		padding: $space/ 2;
+	}
+}
+
 ul {
 	list-style-type: none;
 	margin: 0;

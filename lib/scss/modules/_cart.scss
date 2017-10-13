@@ -3,9 +3,25 @@
   padding-left: $space2;
   padding-right: $space2;
 
+  @media screen and (max-width: $mobile) {
+    padding-left: $space;
+    padding-right: $space;
+  }
+
   .cart-grid__columns {
     width: 100%;
     padding-bottom: $space / 2;
+
+    .cart-grid__columns__cats {
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+
+        .grid__quarter {
+          width: 33.3%;
+          padding-right: $space/4;
+        }
+      }
+    }
   }
 
   .cart-grid__totals {
@@ -17,6 +33,10 @@
 
     .cart_totals {
       width: 33.33%;
+
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+      }
 
       table {
         width: 100%;
@@ -66,6 +86,10 @@
     .actions {
       width: 33.33%;
 
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+      }
+
       .coupon {
         padding-bottom: $space/4;
 
@@ -103,6 +127,25 @@
       border-bottom: $border;
       padding-top: $space;
       padding-bottom: $space;
+
+      .cart__product__info {
+        .cart__product__cats {
+          @media screen and (max-width: $mobile) {
+            width: 100%;
+            flex-wrap: wrap;
+            font-size: $fontSizeSmallMobile;
+
+            .grid__quarter {
+              width: 33%;
+              padding-right: $space/4;
+            }
+
+            .product-remove {
+              width: 100%;
+            }
+          }
+        }
+      }
     }
 
     .product-price, .product-quantity, .product-subtotal {

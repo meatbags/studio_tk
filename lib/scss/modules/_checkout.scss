@@ -6,6 +6,11 @@ $colL: 200px;
   padding-left: $space2;
   padding-right: $space2;
 
+  @media screen and (max-width: $mobile) {
+    padding-left: 0;//$space;
+    padding-right: 0;// $space;
+  }
+
   input {
     background: none;
     border: $border;
@@ -17,6 +22,10 @@ $colL: 200px;
     margin-top: $space2;
     border-bottom: $border;
     padding-bottom: $space/2;
+
+    @media screen and (max-width: $mobile) {
+      border-bottom: none;
+    }
   }
 
   .checkout {
@@ -27,6 +36,12 @@ $colL: 200px;
     label {
       display: inline-block;
       width: $colL;
+
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+        padding-top: $space/2;
+        padding-bottom: $space/4;
+      }
     }
 
     select, .select2 {
@@ -34,6 +49,10 @@ $colL: 200px;
       width: $colL;
       min-width: $colL;
       max-width: $colL;
+
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+      }
     }
 
     input {
@@ -48,6 +67,14 @@ $colL: 200px;
       &:nth-child(1) {
         // no label
         margin-left: $colL;
+
+        @media screen and (max-width: $mobile) {
+          margin-left: 0;
+        }
+      }
+
+      @media screen and (max-width: $mobile) {
+        width: 100%;
       }
     }
 
@@ -55,6 +82,10 @@ $colL: 200px;
       min-height: 100px;
       width: $colR;
       font-family: $fontStack;
+
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+      }
     }
 
     .place-order {

@@ -18,10 +18,10 @@
         <div class='grid__full section-full'>
           <img src='<?php echo $mainImage?>' />
         </div>
-        <div class='grid__quarter editorial__date text-right text-large'>
+        <div class='grid__quarter responsive editorial__date text-right text-large'>
           (<?php echo $date; ?>)
         </div>
-        <div class='grid__threefifths editorial__description text-mediumsmall font-serif'>
+        <div class='grid__threefifths responsive editorial__description text-mediumsmall font-serif'>
           <?php echo $content; ?>
         </div>
       </div>
@@ -96,7 +96,7 @@
               $src = $img['image']['sizes']['large'];
               $caption = $img['caption'];
               ?>
-              <div class='grid__half section-double'>
+              <div class='grid__half responsive section-double'>
                 <div class='section-double__inner font-serif'>
                   <img src='<?php echo $src; ?>' />
                   <?php if ($caption != ''): ?>

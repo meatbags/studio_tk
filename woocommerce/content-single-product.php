@@ -24,9 +24,26 @@ if ($hasVariations) {
 ?>
 
 <div id="product-<?php the_ID(); ?>" class='product'>
+	<div class='product__gallery'>
+		<?php
+		foreach($attachmentIds as $attachmentId):
+      $imageUrl = wp_get_attachment_url( $attachmentId ); ?>
+			<div class='product__gallery__image'>
+				<img src='<?php echo $imageUrl; ?>'/>
+			</div>
+		<?php endforeach; ?>
+	</div>
 	<div class='product__info'>
 		<div class='product__info__inner text-small'>
-			<div class='product__info__price'><?php echo $price; ?></div>
+			<div class='product__info__price mobile-hide'><?php echo $price; ?></div>
+			<div class='product__info__price-mobile mobile-show'>
+				<div class='left'>
+					<?php echo $name; ?>
+				</div>
+				<div class='right'>
+					<?php echo $price; ?>
+				</div>
+			</div>
 
 			<?php if ($hasVariations):
 				$count = 0;
@@ -136,15 +153,5 @@ if ($hasVariations) {
 				</div>
 			<?php endif; ?>
 		</div>
-	</div>
-
-	<div class='product__gallery'>
-		<?php
-		foreach($attachmentIds as $attachmentId):
-      $imageUrl = wp_get_attachment_url( $attachmentId ); ?>
-			<div class='product__gallery__image'>
-				<img src='<?php echo $imageUrl; ?>'/>
-			</div>
-		<?php endforeach; ?>
 	</div>
 </div>

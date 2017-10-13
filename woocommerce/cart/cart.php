@@ -12,13 +12,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class='cart-grid__columns grid'>
 		<div class='grid__half'></div>
 		<div class='grid__half grid'>
-			<div class='grid__third'>
+			<div class='grid__third mobile-hide'>
 			</div>
-			<div class='grid__twothirds grid text-small text-right'>
+			<div class='grid__twothirds cart-grid__columns__cats grid text-small text-right'>
 				<div class='grid__quarter'>Price</div>
-				<div class='grid__quarter'>Quantity</div>
+				<div class='grid__quarter'>
+					<span class='mobile-hide'>Quantity</span>
+					<span class='mobile-show'>Qty</span>
+				</div>
 				<div class='grid__quarter'>Sub-total</div>
-				<div class='grid__quarter'></div>
+				<div class='grid__quarter mobile-hide'></div>
 			</div>
 		</div>
 	</div>
@@ -60,12 +63,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 					</div>
 					<div class='grid__half grid cart__product__info'>
-						<div class='grid__third'></div>
-						<div class='grid__twothirds grid text-right'>
+						<div class='grid__third mobile-hide'></div>
+						<div class='grid__twothirds grid cart__product__cats text-right'>
 							<div class='grid__quarter product-price' data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
 								<?php echo $price; ?>
 							</div>
-							<div class='grid__quarter product-quantity' data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
+							<div class='grid__quarter responsive product-quantity' data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
 								<?php echo $qtyInput; ?>
 							</div>
 							<div class='grid__quarter product-subtotal text-right' data-title="<?php esc_attr_e('Total', 'woocommerce'); ?>">

@@ -2,6 +2,12 @@
   padding: $space3;
   padding-top: $space6;
   padding-bottom: $space;
+  overflow-wrap: break-word;
+
+  @media screen and (max-width: $mobile) {
+    padding-left: $space;
+    padding-right: $space;
+  }
 
   .single__content {
     border-bottom: $border;
@@ -22,11 +28,27 @@
 
     &:nth-child(3n - 2) {
       padding-right: $space2;
+      @media screen and (max-width: $mobile) {
+        border: none;
+        padding-right: 0;
+        padding-left: 0;
+      }
     }
 
     &:nth-child(3n - 1) {
       padding-left: $space2;
       border-left: $border;
+      @media screen and (max-width: $mobile) {
+        border: none;
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      margin-top: $space2;
+      margin-bottom: $space2;
+      border-bottom: $border;
     }
   }
 }
@@ -37,11 +59,22 @@
 
   .editorial__date {
     padding: $space2;
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      padding: $space;
+      text-align: left;
+    }
   }
 
   .editorial__description {
     padding-top: $space2 + $space /2;
     font-weight: 100;
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      padding: $space;
+    }
   }
 }
 
@@ -55,6 +88,11 @@
   &.pad {
     padding-top: $space6;
     padding-bottom: $space6;
+
+    @media screen and (max-width: $mobile) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 
   .section-full {
@@ -62,6 +100,10 @@
     max-height: 100vh;
     overflow: hidden;
     padding-bottom: $space2;
+
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 0;
+    }
 
     img {
       width: 100%;
@@ -87,6 +129,11 @@
         padding-top: $space/2;
         width: 50%;
         text-align: center;
+
+        @media screen and (max-width: $mobile) {
+          width: 100%;
+          padding: $space;
+        }
       }
     }
   }
@@ -99,6 +146,10 @@
       width: 60%;
       text-align: center;
 
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+      }
+
       img {
         width: 100%;
         height: auto;
@@ -108,6 +159,10 @@
         width: 75%;
         margin: 0 auto;
         padding-top: $space / 2;
+
+        @media screen and (max-width: $mobile) {
+          padding: $space;
+        }
       }
     }
   }
@@ -122,10 +177,19 @@
       text-align: center;
       overflow: hidden;
 
+      @media screen and (max-width: $mobile) {
+        padding: 0;
+      }
+
       .section-double__inner__caption {
         padding-top: $space / 2;
         width: 50%;
         margin: 0 auto;
+
+        @media screen and (max-width: $mobile) {
+          width: 100%;
+          padding: $space;
+        }
       }
 
       img {
@@ -138,6 +202,10 @@
       .section-double__inner {
         padding-right: $space3;
         padding-left: $space;
+
+        @media screen and (max-width: $mobile) {
+          padding: 0;
+        }
       }
     }
   }
@@ -150,12 +218,15 @@
       width: 50%;
       text-align: center;
 
-      .section-textarea__inner__title {
+      @media screen and (max-width: $mobile) {
+        width: 100%;
+        padding:$space;
+      }
 
+      .section-textarea__inner__title {
       }
 
       .section-textarea__inner__text {
-
       }
     }
   }
