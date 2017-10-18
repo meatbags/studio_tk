@@ -28,10 +28,7 @@
   $lettersText = join(', ', $letters);
 ?>
 
-<div class='grid text-medium uppercase <?php
-  if ($type == 'type_inspector'){
-    echo 'index-trigger';
-  }?>' data-post='<?php echo $id; ?>'>
+<div class='grid text-medium uppercase' data-post='<?php echo $id; ?>'>
   <div class='grid__quarter fixed'>(<?php echo $lettersText; ?>)</div>
   <div class='grid__half text-centre reveal fixed'><?php echo $title; ?></div>
   <div class='grid__quarter text-right fixed'>(<?php echo $itemType; ?>)</div>

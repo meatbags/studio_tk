@@ -2,7 +2,7 @@
   $id = get_the_ID();
   $url = '#' . get_the_title();
   $type = get_field('menu_type');
-  $classes = ($type != 'type_inspector') ? 'index-trigger filter-item ' : 'filter-item ';
+  $classes = 'index-trigger filter-item ';
   $categories = get_the_category();
   foreach ($categories as $cat) {
     $classes .= 'filter-' . $cat->slug . ' ';
