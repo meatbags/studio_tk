@@ -129,11 +129,11 @@
   width: 100%;
   height: 100%;
   position: relative;
-  cursor: move;
+  //cursor: move;
   overflow: hidden;
 
   &:hover {
-    cursor: move;
+    //cursor: move;
   }
 
   .inspector__mask {

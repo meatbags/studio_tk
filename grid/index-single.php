@@ -10,21 +10,12 @@
 ?>
 
 <div data-post='<?php echo $id; ?>' class='item grid__half responsive height-75 <?php echo $classes; ?>'>
-  <?php if ($type != 'type_inspector'): ?>
-    <a href='<?php echo $url; ?>'>
-      <div class='item__inner reveal-children'>
-      <?php
-        get_template_part('grid/shared/index-header');
-        get_template_part('grid/shared/index-body');
-      ?>
-      </div>
-    </a>
-  <?php else: ?>
+  <a href='<?php echo $url; ?>'>
     <div class='item__inner reveal-children'>
-      <a href='<?php echo $url; ?>'>
-        <?php get_template_part('grid/shared/index-header'); ?>
-      </a>
-      <?php get_template_part('grid/shared/index-body'); ?>
+    <?php
+      get_template_part('grid/shared/index-header');
+      get_template_part('grid/shared/index-body');
+    ?>
     </div>
-  <?php endif; ?>
+  </a>
 </div>
