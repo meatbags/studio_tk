@@ -31,7 +31,11 @@ if ($hasVariations) {
 			<div class='product__gallery__image'>
 				<img src='<?php echo $imageUrl; ?>'/>
 			</div>
-		<?php endforeach; ?>
+		<?php endforeach;
+
+		// get footer here (sticky)
+		get_template_part('footershop');
+		?>
 	</div>
 	<div class='product__info'>
 		<div class='product__info__inner text-small'>

@@ -6,18 +6,39 @@
 }
 
 .instagram-grid {
-	.item {
-		overflow: hidden;
-		padding: 0;
+	padding-left: $space3;
+	padding-right: $space3;
+
+	@media screen and (max-width: $mobile) {
+		padding-left: $space;
+		padding-right: $space;
+		margin-top: $space;
+	}
+
+	.instagram-grid__inner {
+		width: 100%;
 		padding: $space / 2;
+		background: $lightGrey;
 
-		.item__inner {
-			width: 100%;
-			height: 100%;
+		.item {
+			overflow: hidden;
+			padding: 0;
+			padding: $space / 2;
+			height: 250px;
 
-			img {
+			@media screen and (max-width: $mobile) {
+				height: 150px;
+			}
+
+			.item__inner {
 				width: 100%;
-				height: auto;
+				height: 100%;
+				transition: $transition;
+
+				img {
+					width: auto;
+					height: 100%;
+				}
 			}
 		}
 	}

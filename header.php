@@ -20,7 +20,7 @@
 	</script>
 </head>
 
-<body class="<?php echo join(' ', get_body_class('')) . ((is_page('Features') ? ' body-alt' : '')); ?>">
+<body class="<?php echo join(' ', get_body_class('')) . (((is_page('Features')) ? ' body-alt' : '')); ?>">
 
 <?php get_template_part('loading'); ?>
 

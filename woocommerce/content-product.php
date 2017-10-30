@@ -24,7 +24,7 @@
 	}
 ?>
 
-<div class='grid__half responsive shop-grid__product reveal-children'>
+<div class='grid__half responsive height-full shop-grid__product reveal-children'>
 	<div class='shop-grid__product__inner'>
 		<a href='<?php echo $link; ?>'>
 			<div class='shop-grid__product__image parallax parallax-once parallax-rise parallax-fade'>

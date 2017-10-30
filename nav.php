@@ -1,9 +1,15 @@
 <?php
 	$title = is_shop() ? 'SHOP' : get_the_title();
 	$titleCentre = (is_single()) ? true : false;
+	$template = basename(get_page_template());
+	$postType = get_post_type();
 ?>
 
-<div class='nav mobile-hide <?php if (is_home()){ echo 'nav-index'; } ?>'>
+<div class='nav mobile-hide <?php if (is_home()) {
+		echo 'nav-index';
+	} elseif($postType == 'editorials') {
+		echo 'inverted';
+	} ?>'>
 	<div class='grid nav__list'>
 		<div class='grid__third text-left'>
 			<div class='nav__list__item'>
@@ -26,7 +32,7 @@
 			<div class='nav__list__item nav__filter clickable'>
 				MENU
 			</div>
-			<div class='nav__list__item'>
+			<div class='nav__list__item nav__cart'>
 				<a href='<?php echo get_site_url(); ?>/cart/'>CART (<?php echo WC()->cart->get_cart_contents_count(); ?>)</a>
 			</div>
 		</div>

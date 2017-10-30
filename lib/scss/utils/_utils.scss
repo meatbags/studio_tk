@@ -137,6 +137,8 @@
 
 .text-mediumsmall {
 	font-size: $fontSizeMediumSmall;
+	line-height: 1.25;
+	letter-spacing: 0.5px;
 
 	@media screen and (max-width: $mobile) {
 		font-size: $fontSizeMediumSmallMobile;

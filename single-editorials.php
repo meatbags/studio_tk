@@ -47,7 +47,7 @@
                 <?php
                   endif;
                   if ($caption != ''): ?>
-                <div class='section-full__inner__caption'>
+                <div class='section-full__inner__caption text-mediumsmall'>
                   <?php echo $caption; ?>
                 </div>
                 <?php endif; ?>
@@ -74,7 +74,7 @@
                 </video>
               <?php endif; ?>
               <?php if ($caption != ''): ?>
-                <div class='section-single__inner__caption font-serif'>
+                <div class='section-single__inner__caption text-mediumsmall font-serif'>
                   <?php echo $caption; ?>
                 </div>
               <?php endif; ?>
@@ -100,7 +100,7 @@
                 <div class='section-double__inner font-serif'>
                   <img src='<?php echo $src; ?>' />
                   <?php if ($caption != ''): ?>
-                    <div class='section-double__inner__caption'>
+                    <div class='section-double__inner__caption text-mediumsmall'>
                       <?php echo $caption; ?>
                     </div>
                   <?php endif; ?>
@@ -121,10 +121,10 @@
           <div class='section pad'>
             <div class='section-textarea'>
               <div class='section-textarea__inner'>
-                <div class='section-textarea__inner__title'>
+                <div class='section-textarea__inner__title text-mediumsmall'>
                   <?php echo $textTitle; ?>
                 </div>
-                <div class='section-textarea__inner__text font-serif'>
+                <div class='section-textarea__inner__text font-serif text-mediumsmall'>
                   <?php echo $text; ?>
                 </div>
               </div>
@@ -144,10 +144,10 @@
           ));
           ?>
           <div class='section'>
-            <div class='section-related grid__full background-white text-centre text-large text-black'>
+            <div class='section-related grid__full background-white text-centre text-medium text-black'>
               RELATED PROJECTS
             </div>
-            <div class='grid index-grid text-black index-grid-related'>
+            <div class='grid index-grid text-black text-medium index-grid-related'>
               <?php
               if ($query->have_posts()) {
           			while ($query->have_posts()) {

@@ -27,7 +27,8 @@
 
 			.item__inner__date {
 				position: absolute;
-				padding: $space2;
+				padding: $space;
+				text-transform: uppercase;
 
 				@media screen and (max-width: $mobile) {
 					padding: $space/2;
@@ -40,6 +41,11 @@
 				overflow: hidden;
 
 				img {
+					width: 100%;
+					object-fit: cover;
+				}
+
+				video {
 					width: 100%;
 					object-fit: cover;
 				}

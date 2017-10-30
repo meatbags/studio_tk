@@ -31,6 +31,6 @@
 
 		if (is_home()):
 	?>
-		<div id='load-more-projects' class='grid__full index__load-more clickable text-normal transition text-centre'>(LOAD MORE)</div>
+		<div id='load-more-projects' class='grid__full index__load-more clickable text-medium transition text-centre'>(LOAD MORE)</div>
 	<?php endif; ?>
 </div>

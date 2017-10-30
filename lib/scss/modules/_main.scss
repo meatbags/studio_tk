@@ -54,30 +54,3 @@
 		}
 	}
 }
-
-.featured-grid {
-	padding-left: $space3;
-	padding-right: $space3;
-
-	@media screen and (max-width: $mobile) {
-		padding-left: $space;
-		padding-right: $space;
-		margin-top: $space;
-	}
-
-	.item {
-		padding: $space;
-		height: 250px;
-		background: $lightGrey;
-
-		@media screen and (max-width: $mobile) {
-			height: 150px;
-		}
-
-		.item__inner {
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-		}
-	}
-}

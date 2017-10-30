@@ -5,33 +5,29 @@
 	position: fixed;
 	height: $space;
 	z-index: $indexLoadingBar;
+	transition: $transitionSlow;
+	pointer-events: none;
 
 	.loading-bar__inner {
-		width: 50%;
+		width: 0;
 		background: $black;
-		height: $space / 4;
+		height: $space / 5;
+		transition: $transitionSlow;
 	}
 
 	&.disabled {
-		display: none;
+		opacity: 0;
+	}
+
+	&.inverted {
+		.loading-bar__inner {
+			background: $white;
+		}
 	}
 }
 
-/*
-.loading-screen {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background: $lightGrey;
-	z-index: $indexLoading;
-	//transition: $transitionNormal;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	.loading-screen__message {
+.body-alt {
+	.loading-bar__inner {
+		background: $white;
 	}
 }
-*/

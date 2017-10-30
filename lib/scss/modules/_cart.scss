@@ -24,6 +24,11 @@
     }
   }
 
+  .cart-grid__category-titles {
+    padding-bottom: $space;
+    color: $grey;
+  }
+
   .cart-grid__totals {
     width: 100%;
     display: flex;
@@ -148,16 +153,32 @@
       }
     }
 
-    .product-price, .product-quantity, .product-subtotal {
-      //padding-right: $space / 2;
-      //padding-left: $space / 2;
+    .product-image {
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .product-name, .product-vat, .product-price, .product-quantity, .product-subtotal, .product-remove {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .product-name {
+      padding: $space;
     }
 
     input[type=number] {
-      width: 50%;
+      width: 40px;
       text-align: right;
       border: none;
       font-family: $fontStack;
+      border: 1px solid $grey;
     }
 
     input[type=number]::-webkit-inner-spin-button,

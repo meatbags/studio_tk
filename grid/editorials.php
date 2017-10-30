@@ -24,7 +24,7 @@
 		}
 
 		if (is_home()): ?>
-			<div id='load-more-editorials' class='grid__full transition text-normal text-centre clickable'>
+			<div id='load-more-editorials' class='grid__full transition text-medium text-centre clickable'>
 				(LOAD MORE)
 			</div>
 		<?php

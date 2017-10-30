@@ -56,6 +56,14 @@
 	}
 }
 
+.nav__filter, .nav__cart {
+	transition: $transitionFast;
+
+	&.active {
+		color: $black;
+	}
+}
+
 .menu {
 	@extend .text-large;
 
@@ -130,6 +138,7 @@
 	}
 
 	&.inverted {
+		/*
 		color: $colourBackground;
 		background: $colourAlt;
 
@@ -140,16 +149,20 @@
 		.border-left {
 			border-left: $borderAlt;
 		}
+		*/
 	}
 }
 
 .body-alt .menu {
+	color: $black;
+	/*
 	color: $colourBackground;
 	background: $colourAlt;
 
 	.item {
 		border-bottom: $borderAlt;
 	}
+	*/
 }
 
 .nav-mobile-button {

@@ -34,9 +34,16 @@
 	&.footer-product {
 		padding-top: 0;
 		margin-top: 0;
+		position: absolute;
+		bottom: 0;
+		padding-bottom: $space;
+
+		.footer__inner {
+			border-top: none;
+		}
 
 		@media screen and (max-width: $mobile) {
-			background-color: $lightGrey;
+			display: none;
 		}
 
 		.footer__inner {

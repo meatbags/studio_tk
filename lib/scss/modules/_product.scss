@@ -32,7 +32,7 @@ $colourSize: 24px;
 
         .product__info__price-mobile__inner {
           display: flex;
-          
+
           .left {
             text-align: left;
             width: 50%;
@@ -107,6 +107,7 @@ $colourSize: 24px;
 
   .product__gallery {
     width: 100%;
+    position: relative;
 
     @media screen and (max-width: $mobile) {
       padding-top: $space2;
