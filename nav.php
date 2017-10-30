@@ -24,7 +24,7 @@
 		</div>
 		<div class='grid__third text-right'>
 			<div class='nav__list__item nav__filter clickable'>
-				FILTER
+				MENU
 			</div>
 			<div class='nav__list__item'>
 				<a href='<?php echo get_site_url(); ?>/cart/'>CART (<?php echo WC()->cart->get_cart_contents_count(); ?>)</a>
@@ -47,7 +47,7 @@
 		</div>
 		<div class='grid__third grid'>
 			<div class='nav__list__item nav__filter grid__half text-right'>
-				FILTER
+				MENU
 			</div>
 			<div class='nav__list__item grid__half text-right'>
 				<a href='<?php echo get_site_url(); ?>/cart/'>CART (<?php echo WC()->cart->get_cart_contents_count(); ?>)</a>
@@ -77,7 +77,7 @@
 			</div>
 		</div>
 		<div class='item'>
-			<a href='<?php echo get_site_url(); ?>/editorials/'>EDITORIALS</a>
+			<a href='<?php echo get_site_url(); ?>/features/'>FEATURES</a>
 		</div>
 		<div class='item'>
 			<a href='<?php echo get_site_url(); ?>/about/'>ABOUT</a>

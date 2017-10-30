@@ -6,6 +6,15 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
+function ajax_insta() {
+  $content = file_get_contents('https://www.instagram.com/teuberkohlhoff/');
+  echo $content;
+  die();
+}
+
+add_action('wp_ajax_nopriv_ajax_insta', 'ajax_insta');
+add_action('wp_ajax_ajax_insta', 'ajax_insta');
+
 function ajax_load(){
   header("Content-Type: text/html");
 

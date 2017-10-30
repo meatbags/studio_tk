@@ -2,7 +2,7 @@
 </div> <!-- /content -->
 
 <div role="contentinfo" class="mobile-hide footer <?php
-		if (is_page('Editorials')) {
+		if (is_page('Features')) {
 			echo 'footer-alt';
 		} elseif (is_product()) {
 			echo 'footer-product';
@@ -35,7 +35,7 @@
 </div>
 
 <div role="contentinfo" class="mobile-show text-small footer <?php
-		if (is_page('Editorials')) {
+		if (is_page('Features')) {
 			echo 'footer-alt';
 		} elseif (is_product()) {
 			echo 'footer-product';

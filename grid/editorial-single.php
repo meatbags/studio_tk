@@ -4,15 +4,12 @@
   $date = get_the_date();
   $excerpt = get_the_excerpt();
   $link = get_the_permalink();
+  // get_site_url() . '/editorials/'
 ?>
 
 <div class='grid__full'>
   <div class='item editorial-item'>
-    <a href='<?php if (is_home()) {
-        echo get_site_url() . '/editorials/';
-      } else {
-        echo $link;
-      }?>'>
+    <a href='<?php echo $link ?>'>
       <div class='item__inner reveal-children'>
         <div class='item__inner__date reveal text-large'>
           (<?php echo $date; ?>)

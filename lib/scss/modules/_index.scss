@@ -30,7 +30,7 @@
 		margin-top: $space3;
 		margin-bottom: $space3;
 		width: 100%;
-		height: 100%;
+		
 		padding-right: $space3;
     transition: opacity $transition;
 
@@ -72,6 +72,7 @@
 				.img-fit {
 					object-fit: contain;
 					max-height: 100%;
+          max-width: 100%;
 				}
 			}
 		}

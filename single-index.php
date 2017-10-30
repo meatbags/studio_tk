@@ -10,7 +10,7 @@
 <?php
   foreach ($sections as $sec) :?>
     <div class='item__image'>
-      <img src='<?php echo $sec['image']['url']; ?>' />
+      <img class='to-load' src='<?php echo $sec['image']['url']; ?>' />
     </div>
   <?php endforeach;?>
   <div class='item__text'>

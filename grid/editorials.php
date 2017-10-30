@@ -1,6 +1,6 @@
 <!-- editorials grid -->
 
-<div class='grid editorials-grid trigger' data-title='EDITORIALS' data-invert='true'>
+<div class='grid editorials-grid trigger' data-title='FEATURE' data-invert='true'>
 	<?php
 		$load = (is_home() ? 2 : -1);
 		$query = new WP_Query(array(
@@ -14,7 +14,6 @@
 		if ($query->have_posts()) {
 			while ($query->have_posts()) {
 				$query->the_post();
-
 				get_template_part('grid/editorial-single');
 
 				if ($count != $postCount - 1):?>
@@ -25,7 +24,9 @@
 		}
 
 		if (is_home()): ?>
-			<div id='load-more-editorials' class='grid__full transition text-normal text-centre clickable'>(LOAD MORE)</div>
+			<div id='load-more-editorials' class='grid__full transition text-normal text-centre clickable'>
+				(LOAD MORE)
+			</div>
 		<?php
 			endif;
 			?>

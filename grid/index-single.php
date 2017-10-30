@@ -9,7 +9,7 @@
   }
 ?>
 
-<div data-post='<?php echo $id; ?>' class='item grid__half responsive height-75 <?php echo $classes; ?>'>
+<div data-post='<?php echo $id; ?>' class='item grid__half responsive height-full <?php echo $classes; ?>'>
   <a href='<?php echo $url; ?>'>
     <div class='item__inner reveal-children'>
     <?php

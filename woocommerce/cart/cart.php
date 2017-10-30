@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class='cart-grid'>
+<div class='cart-grid text-medium'>
 
 <?php wc_print_notices();
 	do_action( 'woocommerce_before_cart' ); ?>
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class='grid__half grid'>
 			<div class='grid__third mobile-hide'>
 			</div>
-			<div class='grid__twothirds cart-grid__columns__cats grid text-small text-right'>
+			<div class='grid__twothirds cart-grid__columns__cats grid text-right'>
 				<div class='grid__quarter'>Price</div>
 				<div class='grid__quarter'>
 					<span class='mobile-hide'>Quantity</span>

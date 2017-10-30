@@ -75,6 +75,12 @@
 		transform: translateX(100vw);
 	}
 
+	a {
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+
 	.menu__list {
 		height: 100%;
 		width: 100%;
@@ -100,6 +106,10 @@
 
 		.filter {
 			&.active {
+				opacity: 0.5;
+			}
+
+			&:hover {
 				opacity: 0.5;
 			}
 		}

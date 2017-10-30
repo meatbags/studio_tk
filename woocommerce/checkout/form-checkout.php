@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class='checkout-grid'>
+<div class='checkout-grid text-medium'>
 
 <?php
 wc_print_notices();

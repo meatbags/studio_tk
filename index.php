@@ -4,6 +4,6 @@
 	get_template_part('grid/index');
 	get_template_part('grid/editorials');
 	get_template_part('home/about');
-	get_template_part('grid/featured');
+	get_template_part('grid/instagram');
 	get_footer();
 ?>

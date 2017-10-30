@@ -29,6 +29,10 @@
 	height: 100vh;
 }
 
+.height-full {
+	height: 88vh;
+}
+
 .hide {
 	display: none;
 }
@@ -115,6 +119,8 @@
 
 .text-small {
 	font-size: $fontSizeSmall;
+	line-height: 1.25;
+	letter-spacing: 0.5px;
 
 	@media screen and (max-width: $mobile) {
 		font-size: $fontSizeSmallMobile;
@@ -229,4 +235,8 @@
 
 .clickable {
 	cursor: pointer;
+
+	&:hover {
+		opacity: 0.5;
+	}
 }

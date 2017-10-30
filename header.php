@@ -20,14 +20,9 @@
 	</script>
 </head>
 
-<body class="<?php echo join(' ', get_body_class('')) . ((is_page('Editorials') ? ' body-alt' : '')); ?>">
+<body class="<?php echo join(' ', get_body_class('')) . ((is_page('Features') ? ' body-alt' : '')); ?>">
 
-<div class='loading-screen'>
-	<div class='loading-screen__message'>
-		<img src='<?php echo get_template_directory_uri(); ?>/lib/img/logo_short.png' />
-		<br /><br />
-	</div>
-</div>
+<?php get_template_part('loading'); ?>
 
 <div class="content">
 	<div class="wrapper">

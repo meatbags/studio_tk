@@ -5,6 +5,12 @@
 	padding: $space2;
 	padding-top: $space;
 
+	a {
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+
 	@media screen and (max-width: $mobile) {
 		padding: $space;
 	}

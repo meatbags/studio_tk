@@ -8,7 +8,7 @@
 <div class='landing hidden trigger' data-title='INDEX'>
   <div class='landing__image'>
     <?php if ($mp4 != '' || $webm != ''): ?>
-      <video loop autoplay>
+      <video loop autoplay muted>
         <source src="<?php echo $mp4; ?>" type="video/mp4">
         <source src="<?php echo $webm; ?>" type="video/webm">
       </video>
@@ -19,7 +19,7 @@
   <div class='landing__title'>
     <div class='landing__title__inner'>
       <img src='<?php echo get_template_directory_uri(); ?>/lib/img/logo.svg' />
-      <div class='landing__title__inner__text'>
+      <div class='landing__title__inner__text text-medium'>
         <?php echo get_bloginfo('description'); ?>
       </div>
     </div>

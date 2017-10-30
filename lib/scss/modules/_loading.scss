@@ -1,3 +1,23 @@
+.loading-bar {
+	top: 0;
+	left: 0;
+	width: 100vw;
+	position: fixed;
+	height: $space;
+	z-index: $indexLoadingBar;
+
+	.loading-bar__inner {
+		width: 50%;
+		background: $black;
+		height: $space / 4;
+	}
+
+	&.disabled {
+		display: none;
+	}
+}
+
+/*
 .loading-screen {
 	position: fixed;
 	top: 0;
@@ -14,3 +34,4 @@
 	.loading-screen__message {
 	}
 }
+*/
