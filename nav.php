@@ -69,15 +69,23 @@
 		</div>
 		<div class='item'>
 			<div class='grid'>
-				<div class='grid__third'>
+				<div class='grid__half'>
 					<a href='<?php echo get_site_url(); ?>/index/'>INDEX</a>
 				</div>
+				<div class='grid__half'>
+					<div class='open-menu clickable' data-target='#menu-filter'>
+						<div class='caret'></div>
+					</div>
+				</div>
 				<?php if (is_home() || $title == 'Index') : ?>
-					<div class='grid__twothirds border-left padding-left'>
-						<div class='filter clickable' data-filter='filter-textiles'>(A) TEXTILES</div>
-						<div class='filter clickable' data-filter='filter-print'>(B) PRINT</div>
-						<div class='filter clickable' data-filter='filter-identities'>(C) IDENTITIES</div>
-						<div class='filter clickable' data-filter='filter-digital'>(D) DIGITAL</div>
+					<div id='menu-filter' class='grid__full dropdown'>
+						<div class='dropdown__inner'>
+							<div class='filter clickable' data-filter='filter-all'>(O) ALL</div>
+							<div class='filter clickable' data-filter='filter-textiles'>(A) TEXTILES</div>
+							<div class='filter clickable' data-filter='filter-print'>(B) PRINT</div>
+							<div class='filter clickable' data-filter='filter-identities'>(C) IDENTITIES</div>
+							<div class='filter clickable' data-filter='filter-digital'>(D) DIGITAL</div>
+						</div>
 					</div>
 				<?php endif; ?>
 			</div>

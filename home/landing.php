@@ -8,7 +8,7 @@
 <div class='landing hidden trigger' data-title='INDEX'>
   <div class='landing__image'>
     <?php if ($mp4 != '' || $webm != ''): ?>
-      <video loop autoplay muted>
+      <video autoplay muted loop playsinline>
         <source src="<?php echo $mp4; ?>" type="video/mp4">
         <source src="<?php echo $webm; ?>" type="video/webm">
       </video>

@@ -24,11 +24,6 @@
 			overflow: hidden;
 			padding: 0;
 			padding: $space / 2;
-			height: 250px;
-
-			@media screen and (max-width: $mobile) {
-				height: 150px;
-			}
 
 			.item__inner {
 				width: 100%;
@@ -36,8 +31,14 @@
 				transition: $transition;
 
 				img {
-					width: auto;
-					height: 100%;
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			@media screen and (max-width: $mobile) {
+				&:nth-child(n + 7) {
+					display: none;
 				}
 			}
 		}

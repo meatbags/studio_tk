@@ -1,9 +1,22 @@
-.newsletter {
-  width: 100%;
-  display: flex;
-  color: $grey;
+input, button {
+  border-radius: 0;
+}
 
-  input {
+.newsletter-wrapper {
+  width: 100%;
+}
+
+.newsletter {
+  display: flex;
+  flex-wrap: wrap;
+  color: $grey;
+  padding-bottom: $space2;
+
+  @media screen and (max-width: $mobile) {
+    width: 100% !important;
+  }
+
+  input[type=text] {
     flex: 1;
     display: inline;
     text-align: center;
@@ -15,9 +28,13 @@
     margin-right: $space / 4;
   }
 
-  button {
-    display: inline;
-    background: $colourBackground;
+  button, input[type=button], .button-subscribe {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex: 0;
+    display: inline-block;
+    background: $colourBackground !important;
     border: 0;
     padding-left: $space;
     padding-right: $space;
@@ -29,8 +46,18 @@
     color: $grey;
   }
 
+  .es_msg {
+    width: 100%;
+    color: $grey;
+  }
+
+  .newsletter-message {
+    color: $grey !important;
+    font-family: sans-serif;
+  }
+
   &.alt {
-    input {
+    input[type=text] {
       text-align: left;
       padding-left: $space / 2;
     }
@@ -45,11 +72,11 @@
       text-align: left;
     }
 
-    input {
+    input[type=text] {
       width: 100%;
     }
 
-    button {
+    input[type=button] {
       margin-top: $space / 2;
       padding-left: $space / 2;
       padding-right: $space / 2;

@@ -41,7 +41,7 @@
                 <?php if ($media == 'type_image'): ?>
                   <img src='<?php echo $section['image']['sizes']['large']; ?>'/>
                 <?php elseif ($media == 'type_video'): ?>
-                  <video loop autoplay>
+                  <video loop autoplay muted playsinline>
                     <source src="<?php echo $section['video']; ?>" type="video/mp4">
                   </video>
                 <?php

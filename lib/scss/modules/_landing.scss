@@ -42,6 +42,9 @@
 			width: 33vw;
 
 			.landing__title__inner__text {
+				@media screen and (max-width: $mobile) {
+					font-size: 14px;
+				}
 			}
 
 			img {

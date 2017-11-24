@@ -7,8 +7,8 @@ $colL: 200px;
   padding-right: $space2;
 
   @media screen and (max-width: $mobile) {
-    padding-left: 0;//$space;
-    padding-right: 0;// $space;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   input {

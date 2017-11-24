@@ -94,14 +94,57 @@
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-around;
+		//justify-content: space-around;
 
 		.item {
 			margin-left: $space2;
-			border-bottom: $border;
 			padding: $space;
 			padding-left: $space3;
 			padding-right: 0;
+
+			.open-menu {
+				height: 100%;
+				padding: $space;
+				display: flex;
+				align-items: center;
+
+				.caret {
+					width: 14px;
+					height: 14px;
+					border-right: 2px solid $grey;
+					border-bottom: 2px solid $grey;
+					transform-origin: 50% 50%;
+					transform: translateY(-8px) rotate(45deg);
+				}
+
+				&.active {
+					.caret {
+						transform: translateY(-2px) rotate(225deg);
+					}
+				}
+
+				@media screen and (max-width: $mobile) {
+					justify-content: flex-end;
+				}
+			}
+
+			.dropdown {
+				overflow: hidden;
+				transition: $transition;
+				padding-left: $space2;
+
+				.dropdown__inner {
+					height: 0;
+				}
+
+				&.active {
+					padding-top: $space;
+
+					.dropdown__inner {
+						height: auto;
+					}
+				}
+			}
 
 			@media screen and (max-width: $mobile) {
 				margin: 0;

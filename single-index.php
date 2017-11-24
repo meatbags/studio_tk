@@ -18,7 +18,7 @@
       </div>
     <?php else: ?>
       <div class='item__image'>
-        <video loop autoplay muted>
+        <video loop autoplay playsinline muted>
           <source src="<?php echo $videoSrc; ?>" type="video/mp4">
         </video>
       </div>
