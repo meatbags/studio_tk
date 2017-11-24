@@ -14,7 +14,7 @@
   }
 
   &.fade {
-    opacity: 0.5;
+    opacity: 1;
   }
 
 	&.index-grid-related {
@@ -27,10 +27,10 @@
 	}
 
 	.item {
-		margin-top: $space3;
-		margin-bottom: $space3;
+		margin-top: $space;
+		margin-bottom: $space;
 		width: 100%;
-		
+
 		padding-right: $space3;
     transition: opacity $transition;
 
@@ -163,9 +163,9 @@
   position: fixed;
   top: 100vh;
   opacity: 0;
+  width: 100vw;
   z-index: $indexOverlay;
   transition: top $transition;
-  width: 100vw;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -174,19 +174,19 @@
   .index-overlay__inner {
     @extend .noselect;
     background: $colourBackground;
-    width: 100%;
+    width: 100vw;
     min-height: 110vh;
     margin-bottom: 110vh;
 
     .index-overlay__item {
-      width: 100%;
+      width: 100vw;
       height: auto;
       padding: 0;
       margin: 0;
 
       .item__image {
-        img {
-          width: 100%;
+        img, video {
+          width: 100vw;
           height: auto;
           margin: 0;
           padding: 0;
