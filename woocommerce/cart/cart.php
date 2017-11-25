@@ -19,10 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<span class='mobile-show'>Qty</span>
 			</div>
 			<div class='grid__twothirds cart-grid__columns__cats grid text-left'>
+				<div class='grid__quarter'></div>
 				<div class='grid__quarter'>Price</div>
-				<div class='grid__quarter'>
-					VAT
-				</div>
 				<div class='grid__quarter'>Total</div>
 				<div class='grid__quarter mobile-hide'></div>
 			</div>
@@ -41,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			if ($product && $product->exists() && $item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $item, $key)) {
 				$permalink = apply_filters($filter . 'permalink', $product->is_visible() ? $product->get_permalink($item) : '', $item, $key);
-				$removeTag = apply_filters($filter . 'remove_link', sprintf('<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>', esc_url(WC()->cart->get_remove_url($key)), __('Remove this item', 'woocommerce'), esc_attr($id), esc_attr($product->get_sku())), $key);
+				$removeTag = apply_filters($filter . 'remove_link', sprintf('<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">Remove</a>', esc_url(WC()->cart->get_remove_url($key)), __('Remove this item', 'woocommerce'), esc_attr($id), esc_attr($product->get_sku())), $key);
 				$image = apply_filters($filter . 'thumbnail', $product->get_image('large'), $item, $key);
 				$name = apply_filters($filter . 'name', $product->get_name(), $item, $key);
 				$price = apply_filters($filter . 'price', WC()->cart->get_product_price($product), $item, $key);
@@ -82,11 +80,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php echo $qtyInput; ?>
 						</div>
 						<div class='grid__twothirds grid cart__product__cats text-right'>
+							<div class='grid__quarter responsive product-vat'></div>
 							<div class='grid__quarter product-price' data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
 								<?php echo $price; ?>
-							</div>
-							<div class='grid__quarter responsive product-vat' >
-								~
 							</div>
 							<div class='grid__quarter product-subtotal text-right' data-title="<?php esc_attr_e('Total', 'woocommerce'); ?>">
 								<?php echo $subTotal; ?>

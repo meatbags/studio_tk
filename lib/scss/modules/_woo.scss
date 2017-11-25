@@ -1,0 +1,13 @@
+.woocommerce-message {
+  padding-top: $space * 4;
+  padding-left: $space * 2;
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+.cart-empty {
+  font-size: 18px;
+  padding-top: $space;
+}

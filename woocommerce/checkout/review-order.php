@@ -20,94 +20,100 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<table class="shop_table woocommerce-checkout-review-order-table">
-	<thead>
-		<tr>
-			<th class="product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-			<th class="product-total"><?php _e( 'Total', 'woocommerce' ); ?></th>
-		</tr>
-	</thead>
-	<tbody>
-		<?php
-			do_action( 'woocommerce_review_order_before_cart_contents' );
 
-			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-				$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+<div class="order-review shop_table woocommerce-checkout-review-order-table">
 
-				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-					?>
-					<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-						<td class="product-name">
-							<?php echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;'; ?>
-							<?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times; %s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ); ?>
-							<?php echo WC()->cart->get_item_data( $cart_item ); ?>
-						</td>
-						<td class="product-total">
-							<?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?>
-						</td>
-					</tr>
-					<?php
-				}
+	<!-- PRODUCT, TOTAL -->
+
+	<div class='grid grid-key'>
+		<div class='grid__half bold product-name'>
+			<?php _e( 'Product', 'woocommerce' ); ?>
+		</div>
+		<div class="grid__half bold text-right product-total">
+			<?php _e( 'Total', 'woocommerce' ); ?>
+		</div>
+	</div>
+
+	<!-- CART -->
+
+	<?php
+		do_action( 'woocommerce_review_order_before_cart_contents' );
+		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+			$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+
+			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+				?>
+				<div class="grid <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
+					<div class="grid__half product-name">
+						<?php echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;'; ?>
+						<?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <span class="product-quantity">' . sprintf( '&times; %s', $cart_item['quantity'] ) . '</span>', $cart_item, $cart_item_key ); ?>
+						<?php echo WC()->cart->get_item_data( $cart_item ); ?>
+					</div>
+					<div class="grid__half text-right product-total">
+						<?php echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); ?>
+					</div>
+				</div>
+				<?php
 			}
+		}
+		do_action( 'woocommerce_review_order_after_cart_contents' );
+	?>
 
-			do_action( 'woocommerce_review_order_after_cart_contents' );
-		?>
-	</tbody>
-	<tfoot>
+	<!-- TOTALS -->
 
-		<tr class="cart-subtotal">
-			<th><?php _e( 'Subtotal', 'woocommerce' ); ?></th>
-			<td><?php wc_cart_totals_subtotal_html(); ?></td>
-		</tr>
+	<div class="grid cart-subtotal">
+		<div class='grid__half bold'><?php _e( 'Subtotal', 'woocommerce' ); ?></div>
+		<div class='grid__half text-right'><?php wc_cart_totals_subtotal_html(); ?></div>
+	</div>
 
-		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
-			<tr class="cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
-				<th><?php wc_cart_totals_coupon_label( $coupon ); ?></th>
-				<td><?php wc_cart_totals_coupon_html( $coupon ); ?></td>
-			</tr>
-		<?php endforeach; ?>
+	<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
+		<div class="grid cart-discount coupon-<?php echo esc_attr( sanitize_title( $code ) ); ?>">
+			<div class='grid__half bold'><?php wc_cart_totals_coupon_label( $coupon ); ?></div>
+			<div class='grid__half text-right'><?php wc_cart_totals_coupon_html( $coupon ); ?></div>
+		</div>
+	<?php endforeach; ?>
 
-		<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
+	<!-- SHIPPING -->
 
-			<?php do_action( 'woocommerce_review_order_before_shipping' ); ?>
+	<?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
+		<?php do_action( 'woocommerce_review_order_before_shipping' ); ?>
+		<?php wc_cart_totals_shipping_html(); ?>
+		<?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
+	<?php endif; ?>
 
-			<?php wc_cart_totals_shipping_html(); ?>
+	<?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
+		<div class="fee grid">
+			<div class='grid__half bold'><?php echo esc_html( $fee->name ); ?></div>
+			<div class='grid__half text-right'><?php wc_cart_totals_fee_html( $fee ); ?></div>
+		</div>
+	<?php endforeach; ?>
 
-			<?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
+	<!-- TAX -->
 
+	<?php if ( wc_tax_enabled() && 'excl' === WC()->cart->tax_display_cart ) : ?>
+		<?php if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) : ?>
+			<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
+				<div class="grid tax-rate tax-rate-<?php echo sanitize_title( $code ); ?>">
+					<div class='grid__half bold'><?php echo esc_html( $tax->label ); ?></div>
+					<div class='grid__half text-right'><?php echo wp_kses_post( $tax->formatted_amount ); ?></div>
+				</div>
+			<?php endforeach; ?>
+		<?php else : ?>
+			<div class="tax-total grid">
+				<div class='grid__half bold'><?php echo esc_html( WC()->countries->tax_or_vat() ); ?></div>
+				<div class='grid__half text-right'><?php wc_cart_totals_taxes_total_html(); ?></div>
+			</div>
 		<?php endif; ?>
+	<?php endif; ?>
 
-		<?php foreach ( WC()->cart->get_fees() as $fee ) : ?>
-			<tr class="fee">
-				<th><?php echo esc_html( $fee->name ); ?></th>
-				<td><?php wc_cart_totals_fee_html( $fee ); ?></td>
-			</tr>
-		<?php endforeach; ?>
+	<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
 
-		<?php if ( wc_tax_enabled() && 'excl' === WC()->cart->tax_display_cart ) : ?>
-			<?php if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) : ?>
-				<?php foreach ( WC()->cart->get_tax_totals() as $code => $tax ) : ?>
-					<tr class="tax-rate tax-rate-<?php echo sanitize_title( $code ); ?>">
-						<th><?php echo esc_html( $tax->label ); ?></th>
-						<td><?php echo wp_kses_post( $tax->formatted_amount ); ?></td>
-					</tr>
-				<?php endforeach; ?>
-			<?php else : ?>
-				<tr class="tax-total">
-					<th><?php echo esc_html( WC()->countries->tax_or_vat() ); ?></th>
-					<td><?php wc_cart_totals_taxes_total_html(); ?></td>
-				</tr>
-			<?php endif; ?>
-		<?php endif; ?>
+	<!-- GRAND TOTAL -->
 
-		<?php do_action( 'woocommerce_review_order_before_order_total' ); ?>
+	<div class="order-total grid">
+		<div class='grid__half bold'><?php _e( 'Total', 'woocommerce' ); ?></div>
+		<div class='grid__half text-right'><?php wc_cart_totals_order_total_html(); ?></div>
+	</div>
 
-		<tr class="order-total">
-			<th><?php _e( 'Total', 'woocommerce' ); ?></th>
-			<td><?php wc_cart_totals_order_total_html(); ?></td>
-		</tr>
-
-		<?php do_action( 'woocommerce_review_order_after_order_total' ); ?>
-
-	</tfoot>
-</table>
+	<?php do_action( 'woocommerce_review_order_after_order_total' ); ?>
+</div>
