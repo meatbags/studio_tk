@@ -13,7 +13,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.3.0
+ * @version   2.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,7 +23,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <li class="wc_payment_method payment_method_<?php echo $gateway->id; ?>">
 	<input id="payment_method_<?php echo $gateway->id; ?>" type="radio" class="input-radio" name="payment_method" value="<?php echo esc_attr( $gateway->id ); ?>" <?php checked( $gateway->chosen, true ); ?> data-order_button_text="<?php echo esc_attr( $gateway->order_button_text ); ?>" />
-
 	<div class='payment-method-right'>
 		<label class='payment-method-right__title' for="payment_method_<?php echo $gateway->id; ?>">
 			<?php echo $gateway->get_title(); ?> <!--<?php echo $gateway->get_icon(); ?>-->

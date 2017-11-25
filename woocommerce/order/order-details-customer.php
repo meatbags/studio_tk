@@ -25,32 +25,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<h2><?php _e( 'Customer details', 'woocommerce' ); ?></h2>
 
-	<table class="woocommerce-table woocommerce-table--customer-details shop_table customer_details">
+	<div class="woocommerce-table woocommerce-table--customer-details shop_table customer_details">
 
 		<?php if ( $order->get_customer_note() ) : ?>
-			<tr>
-				<th><?php _e( 'Note:', 'woocommerce' ); ?></th>
-				<td><?php echo wptexturize( $order->get_customer_note() ); ?></td>
-			</tr>
+			<div class='grid'>
+				<div class='grid__half'><?php _e( 'Note:', 'woocommerce' ); ?></div>
+				<div class='grid__half text-right'><?php echo wptexturize( $order->get_customer_note() ); ?></div>
+			</div>
 		<?php endif; ?>
 
 		<?php if ( $order->get_billing_email() ) : ?>
-			<tr>
-				<th><?php _e( 'Email:', 'woocommerce' ); ?></th>
-				<td><?php echo esc_html( $order->get_billing_email() ); ?></td>
-			</tr>
+			<div class='grid'>
+				<div class='grid__half'><?php _e( 'Email:', 'woocommerce' ); ?></div>
+				<div class='grid__half text-right'><?php echo esc_html( $order->get_billing_email() ); ?></div>
+			</div>
 		<?php endif; ?>
 
 		<?php if ( $order->get_billing_phone() ) : ?>
-			<tr>
-				<th><?php _e( 'Phone:', 'woocommerce' ); ?></th>
-				<td><?php echo esc_html( $order->get_billing_phone() ); ?></td>
-			</tr>
+			<div class='grid'>
+				<div class='grid__half'><?php _e( 'Phone:', 'woocommerce' ); ?></div>
+				<div class='grid__half text-right'><?php echo esc_html( $order->get_billing_phone() ); ?></div>
+			</div>
 		<?php endif; ?>
 
 		<?php do_action( 'woocommerce_order_details_after_customer_details', $order ); ?>
 
-	</table>
+	</div>
 
 	<?php if ( ! wc_ship_to_billing_address_only() && $order->needs_shipping_address() ) : ?>
 

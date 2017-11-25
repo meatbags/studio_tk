@@ -30,46 +30,49 @@ $show_customer_details = is_user_logged_in() && $order->get_user_id() === get_cu
 <section class="woocommerce-order-details">
 
 	<h2 class="woocommerce-order-details__title"><?php _e( 'Order details', 'woocommerce' ); ?></h2>
-	<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
-		<thead>
-			<tr>
-				<th class="woocommerce-table__product-name product-name"><?php _e( 'Product', 'woocommerce' ); ?></th>
-				<th class="woocommerce-table__product-table product-total"><?php _e( 'Total', 'woocommerce' ); ?></th>
-			</tr>
-		</thead>
+	<div class="woocommerce-table woocommerce-table--order-details shop_table order_details">
+		<div class='grid'>
+				<div class="grid__half bold woocommerce-table__product-name text-left product-name">
+					<?php _e( 'Product', 'woocommerce' ); ?>
+				</div>
+				<div class="grid__half text-right woocommerce-table__product-table text-right product-total">
+					<?php //_e( 'Total', 'woocommerce' ); ?>
+				</div>
+		</div>
 
-		<tbody>
-			<?php
-				foreach ( $order->get_items() as $item_id => $item ) {
-					$product = apply_filters( 'woocommerce_order_item_product', $item->get_product(), $item );
+		<div class='border-bottom'>
+		<?php
+			foreach ( $order->get_items() as $item_id => $item ) {
+				$product = apply_filters( 'woocommerce_order_item_product', $item->get_product(), $item );
 
-					wc_get_template( 'order/order-details-item.php', array(
-						'order'			     => $order,
-						'item_id'		     => $item_id,
-						'item'			     => $item,
-						'show_purchase_note' => $show_purchase_note,
-						'purchase_note'	     => $product ? $product->get_purchase_note() : '',
-						'product'	         => $product,
-					) );
-				}
-			?>
-			<?php do_action( 'woocommerce_order_items_table', $order ); ?>
-		</tbody>
+				wc_get_template( 'order/order-details-item.php', array(
+					'order'			     => $order,
+					'item_id'		     => $item_id,
+					'item'			     => $item,
+					'show_purchase_note' => $show_purchase_note,
+					'purchase_note'	 => $product ? $product->get_purchase_note() : '',
+					'product'	  => $product,
+				) );
+			}
+		?>
+		<br />
+		</div>
+		<br />
 
-		<tfoot>
+		<?php do_action( 'woocommerce_order_items_table', $order ); ?>
+
 			<?php
 				foreach ( $order->get_order_item_totals() as $key => $total ) {
 					?>
-					<tr>
-						<th scope="row"><?php echo $total['label']; ?></th>
-						<td><?php echo $total['value']; ?></td>
-					</tr>
+					<div class='grid'>
+						<div class='grid__half bold' scope="row"><?php echo $total['label']; ?></div>
+						<div class='grid__half text-right'><?php echo $total['value']; ?></div>
+					</div>
 					<?php
 				}
 			?>
-		</tfoot>
 
-	</table>
+	</div>
 
 	<?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
 
