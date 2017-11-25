@@ -76,6 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</div>
 						</div>
 					</div>
+
 					<div class='grid__half grid cart__product__info'>
 						<div class='grid__third mobile-hide responsive product-quantity text-left' data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
 							<?php echo $qtyInput; ?>
@@ -128,6 +129,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
 
+	<!-- cart-totals.php -->
 	<div class="cart-grid__totals cart-collaterals">
 		<?php do_action('woocommerce_cart_collaterals'); ?>
 	</div>

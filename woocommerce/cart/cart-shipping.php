@@ -21,9 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<tr class="shipping">
-	<th><?php echo wp_kses_post( $package_name ); ?></th>
-	<td data-title="<?php echo esc_attr( $package_name ); ?>">
+<div class="grid shipping">
+	<div class='grid__third bold'><?php echo wp_kses_post( $package_name ); ?></div>
+	<div class='grid__twothirds text-right' data-title="<?php echo esc_attr( $package_name ); ?>">
 		<?php if ( 1 < count( $available_methods ) ) : ?>
 			<ul id="shipping_method">
 				<?php foreach ( $available_methods as $method ) : ?>
@@ -57,5 +57,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php if ( ! empty( $show_shipping_calculator ) ) : ?>
 			<?php woocommerce_shipping_calculator(); ?>
 		<?php endif; ?>
-	</td>
-</tr>
+	</div>
+</div>

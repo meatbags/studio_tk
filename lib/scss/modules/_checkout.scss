@@ -11,6 +11,10 @@ $colL: 200px;
     padding-right: 0;
   }
 
+  input, select, option, .select2-selection {
+    border-radius: 0 !important;
+  }
+
   input {
     background: none;
     border: $border;
@@ -75,6 +79,27 @@ $colL: 200px;
 
       @media screen and (max-width: $mobile) {
         width: 100%;
+      }
+    }
+
+    .ship-different {
+      display: flex;
+    }
+
+    .checkout-checkbox {
+      width: $colR;
+      display: inline-block;
+      padding: 0;
+
+      input[type='checkbox'] {
+        width: auto;
+        margin-left: 0;
+        text-align: left;
+        padding: 0;
+        margin-top: 0;
+        width: $space * 1.1;
+        height: $space * 1.1;
+        border-radius: 0;
       }
     }
 
