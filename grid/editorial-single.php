@@ -17,7 +17,7 @@
         </div>
         <div class='item__inner__image'>
           <?php if ($video != ''): ?>
-            <video loop autoplay muted>
+            <video loop autoplay playsinline muted>
               <source src="<?php echo $video['url']; ?>" type="video/mp4">
             </video>
           <?php else: ?>
