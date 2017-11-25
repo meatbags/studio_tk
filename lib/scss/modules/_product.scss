@@ -95,7 +95,7 @@ $colourSize: 24px;
         }
       }
 
-      .product__info__colour {
+      .product__info__attribute {
         // padding from plugin
         .tawcvs-swatches {
           padding: 0 !important;
@@ -108,6 +108,20 @@ $colourSize: 24px;
           display: inline-block;
           margin-left: $space / 4;
           transition: $transitionFast;
+        }
+
+        .swatches {
+
+          .attr-button {
+            display: inline-block;
+            padding-right: $space;
+            cursor: pointer;
+            font-size: $fontSize14;
+
+            &.active {
+              opacity: 0.5;
+            }
+          }
         }
       }
     }

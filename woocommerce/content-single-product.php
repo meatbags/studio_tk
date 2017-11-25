@@ -101,7 +101,7 @@ if ($hasVariations) {
 								? wc_clean(stripslashes(urldecode($_REQUEST[$attr])))
 								: $product->get_variation_default_attribute($name);
 							?>
-							<div class='product__info__colour padding-half padding-top padding-bottom border-bottom'>
+							<div class='product__info__attribute padding-half padding-top padding-bottom border-bottom'>
 								<div class='label'>
 									<label for="<?php echo $clean; ?>" class='uppercase'>
 										<?php echo $labelName; ?>
