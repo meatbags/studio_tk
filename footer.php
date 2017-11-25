@@ -27,7 +27,7 @@
 			</a> I
 			<a href='<?php echo get_site_url(); ?>/info/'>
 				<span class='tablet-hide'>TERMS & CONDITIONS</span>
-				<span class='tablet-show'>T&Cs</span>
+				<span class='tablet-show'>T&amp;Cs</span>
 			</a>
 		</div>
 		<?php //get_search_form(); ?>

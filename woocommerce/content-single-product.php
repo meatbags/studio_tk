@@ -24,6 +24,9 @@ if ($hasVariations) {
 ?>
 
 <div id="product-<?php the_ID(); ?>" class='product'>
+
+	<!-- images load here -->
+
 	<div class='product__gallery'>
 		<?php
 		foreach($attachmentIds as $attachmentId):
@@ -37,9 +40,14 @@ if ($hasVariations) {
 		get_template_part('footershop');
 		?>
 	</div>
+
+	<!-- product info DT & Mobile -->
+
 	<div class='product__info'>
 		<div class='product__info__inner text-small'>
-			<div class='product__info__price mobile-hide'><?php echo $price; ?></div>
+			<div class='product__info__price text-14 mobile-hide'>
+				<?php echo $price; ?>
+			</div>
 			<div class='product__info__price-mobile mobile-show'>
 				<div class='product__info__price-mobile__inner'>
 					<div class='left'>

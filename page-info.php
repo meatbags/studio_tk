@@ -7,16 +7,21 @@
 ?>
 
 <div class='single-page'>
+  <!-- page content /pages -->
+
   <div class='single__content text-large'>
     <?php echo get_the_content(); ?>
     <?php get_template_part('newsletter'); ?>
     <br />
   </div>
-  <div class='grid text-medium'>
+
+  <!-- fields section content -->
+
+  <div class='grid single-sections'>
     <?php foreach ($sections as $section):
       $letter = $letters[$count % sizeof($letters)];
       ?>
-      <div class='grid__half responsive'>
+      <div class='grid__half responsive text-medium'>
         <div class='grid'>
           <div class='grid__quarter'>(<?php echo $letter; ?>)</div>
           <div class='grid__threequarters text-right'>
@@ -28,7 +33,7 @@
             ?>
           </div>
         </div>
-        <div class='single__text text-normal'>
+        <div class='single__text text-paragraph'>
           <?php echo $section['section_text']; ?>
         </div>
       </div>

@@ -4,6 +4,8 @@
 	overflow: hidden;
 	padding: $space2;
 	padding-top: $space;
+	padding-bottom: 17px;
+	font-size: 12px !important;
 
 	a {
 		&:hover {
@@ -18,7 +20,7 @@
 	.footer__inner {
 		width: 100%;
 		height: 100%;
-		border-top: $border;
+		//border-top: $border;
 		padding-top: $space;
 	}
 
@@ -27,7 +29,7 @@
 
 		.footer__inner {
 			color: $white;
-			border-top: $borderAlt;
+			//border-top: $borderAlt;
 		}
 	}
 
@@ -39,7 +41,7 @@
 		padding-bottom: $space;
 
 		.footer__inner {
-			border-top: none;
+			//border-top: none;
 		}
 
 		@media screen and (max-width: $mobile) {

@@ -12,7 +12,7 @@ $colourSize: 24px;
     position: fixed;
     z-index: $indexProduct;
     padding-top: $space;
-    padding-right: $space8;
+    padding-right: 55px;
 
     @media screen and (max-width: $mobile) {
       position: relative;
@@ -43,6 +43,12 @@ $colourSize: 24px;
             width: 50%;
           }
         }
+      }
+
+      .product__info__description {
+        font-size: 14px;
+        line-height: 1.45;
+        letter-spacing: 0.4px;
       }
 
       .product__info__form-message {

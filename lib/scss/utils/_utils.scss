@@ -77,6 +77,10 @@
             user-select: none;
 }
 
+.text-14 {
+	font-size: $fontSize14;
+}
+
 .text-centre {
 	text-align: center;
 }
@@ -87,6 +91,12 @@
 
 .text-left {
 	text-align: left;
+}
+
+.text-paragraph {
+	font-size: 14px;
+	line-height: 1.45;
+	letter-spacing: 0.4px;
 }
 
 .nowrap {
