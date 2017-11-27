@@ -12,7 +12,7 @@ input, button {
   color: $grey;
   padding-bottom: $space2;
 
-  @media screen and (max-width: $mobile) {
+  @media screen and (max-width: $tablet) {
     width: 100% !important;
   }
 

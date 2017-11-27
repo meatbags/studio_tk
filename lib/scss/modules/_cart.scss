@@ -39,6 +39,10 @@
     .cart_totals {
       width: 33.33%;
 
+      @media screen and (max-width: $tablet) {
+        width: 50%;
+      }
+
       @media screen and (max-width: $mobile) {
         width: 100%;
       }

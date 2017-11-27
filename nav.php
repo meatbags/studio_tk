@@ -72,15 +72,13 @@
 				<div class='grid__half'>
 					<a href='<?php echo get_site_url(); ?>/index/'>INDEX</a>
 				</div>
-
 				<?php if (is_home() || $title == 'Index') : ?>
-
 				<div class='grid__half'>
 					<div class='open-menu clickable' data-target='#menu-filter'>
 						<div class='caret'></div>
 					</div>
 				</div>
-				<div id='menu-filter' class='grid__full dropdown'>
+				<div id='menu-filter' class='grid__full dropdown tablet-medium'>
 					<div class='dropdown__inner'>
 						<div class='filter clickable' data-filter='filter-all'>(O) ALL</div>
 						<div class='filter clickable' data-filter='filter-textiles'>(A) TEXTILES</div>

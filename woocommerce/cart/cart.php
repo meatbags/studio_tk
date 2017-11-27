@@ -13,10 +13,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class='grid__half'>
 			Product
 		</div>
-		<div class='grid__half grid'>
+
+		<div class='grid__half grid tablet-hide'>
 			<div class='grid__third mobile-hide'>
-				<span class='mobile-hide'>Quantity</span>
-				<span class='mobile-show'>Qty</span>
+				<span class='tablet-hide'>Quantity</span>
+				<span class='tablet-show'>Qty</span>
 			</div>
 			<div class='grid__twothirds cart-grid__columns__cats grid text-left'>
 				<div class='grid__quarter'></div>
@@ -24,6 +25,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class='grid__quarter'>Total</div>
 				<div class='grid__quarter mobile-hide'></div>
 			</div>
+		</div>
+
+		<!-- phone/ tablet -->
+		<div class='tablet-show grid__half grid'>
+			<div class='grid__quarter mobile-hide'>Qty</div>
+			<div class='grid__quarter'>Price</div>
+			<div class='grid__quarter'>Total</div>
+			<div class='grid__quarter'></div>
 		</div>
 	</div>
 
@@ -39,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			if ($product && $product->exists() && $item['quantity'] > 0 && apply_filters('woocommerce_cart_item_visible', true, $item, $key)) {
 				$permalink = apply_filters($filter . 'permalink', $product->is_visible() ? $product->get_permalink($item) : '', $item, $key);
-				$removeTag = apply_filters($filter . 'remove_link', sprintf('<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">Remove</a>', esc_url(WC()->cart->get_remove_url($key)), __('Remove this item', 'woocommerce'), esc_attr($id), esc_attr($product->get_sku())), $key);
+				$removeTag = apply_filters($filter . 'remove_link', sprintf('<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"><span class="tablet-hide">Remove</span><span class="tablet-show">x</span></a>', esc_url(WC()->cart->get_remove_url($key)), __('Remove this item', 'woocommerce'), esc_attr($id), esc_attr($product->get_sku())), $key);
 				$image = apply_filters($filter . 'thumbnail', $product->get_image('large'), $item, $key);
 				$name = apply_filters($filter . 'name', $product->get_name(), $item, $key);
 				$price = apply_filters($filter . 'price', WC()->cart->get_product_price($product), $item, $key);
@@ -54,7 +63,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<div class='grid__full grid cart__product <?php echo $wcClasses; ?>'>
 					<div class='grid__half cart__product__name'>
 						<div class='grid'>
-							<div class='grid__quarter'>
+							<div class='grid__quarter tablet-hide'>
 								<div class='product-image'>
 									<?php echo $image; ?>
 								</div>
@@ -75,11 +84,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 					</div>
 
-					<div class='grid__half grid cart__product__info'>
+					<div class='grid__half grid cart__product__info tablet-hide'>
 						<div class='grid__third mobile-hide responsive product-quantity text-left' data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
 							<?php echo $qtyInput; ?>
 						</div>
-						<div class='grid__twothirds grid cart__product__cats text-right'>
+						<div class='grid__twothirds grid cart__product__cats text-right tablet-hide'>
 							<div class='grid__quarter responsive product-vat'></div>
 							<div class='grid__quarter product-price' data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
 								<?php echo $price; ?>
@@ -90,6 +99,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<div class='grid__quarter product-remove'>
 								<?php echo $removeTag; ?>
 							</div>
+						</div>
+					</div>
+
+					<!-- mobile/ tablet -->
+
+					<div class='grid__half grid cart__product__info tablet-show'>
+						<div class='grid__quarter mobile-hide responsive product-quantity text-left' data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
+							<?php echo $qtyInput; ?>
+						</div>
+						<div class='grid__quarter product-price' data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
+							<?php echo $price; ?>
+						</div>
+						<div class='grid__quarter product-subtotal text-right' data-title="<?php esc_attr_e('Total', 'woocommerce'); ?>">
+							<?php echo $subTotal; ?>
+						</div>
+						<div class='grid__quarter product-remove' style='justify-content:flex-end;'>
+							<?php echo $removeTag; ?>
 						</div>
 					</div>
 				</div>
