@@ -13,8 +13,8 @@
   <a href='<?php echo $url; ?>'>
     <div class='item__inner reveal-children'>
     <?php
-      get_template_part('grid/shared/index-header');
       get_template_part('grid/shared/index-body');
+      get_template_part('grid/shared/index-header');
     ?>
     </div>
   </a>

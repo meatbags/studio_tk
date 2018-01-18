@@ -28,7 +28,7 @@
   $lettersText = join(', ', $letters);
 ?>
 
-<div class='grid text-14 uppercase' data-post='<?php echo $id; ?>'>
+<div class='grid padding-bottom text-14 uppercase' data-post='<?php echo $id; ?>'>
   <div class='grid__quarter fixed'>(<?php echo $lettersText; ?>)</div>
   <div class='grid__half text-centre reveal fixed'><?php echo $title; ?></div>
   <div class='grid__quarter text-right fixed'>(<?php echo $itemType; ?>)</div>

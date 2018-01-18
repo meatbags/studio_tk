@@ -9,8 +9,14 @@
   <div class='landing__image'>
     <?php if ($mp4 != '' || $webm != ''): ?>
       <video autoplay muted loop playsinline>
+        <?php if ($mp4): ?>
         <source src="<?php echo $mp4; ?>" type="video/mp4">
+        <?php
+          endif;
+          if ($webm):
+        ?>
         <source src="<?php echo $webm; ?>" type="video/webm">
+        <?php endif; ?>
       </video>
     <?php elseif ($image != ''): ?>
       <img src='<?php echo $image; ?>'/>
