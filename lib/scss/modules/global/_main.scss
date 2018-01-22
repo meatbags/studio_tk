@@ -1,0 +1,15 @@
+// home/ main page styles
+.content {
+	width: 100%;
+
+	.wrapper {
+		width: 100%;
+		margin: 0 auto;
+		min-height: 100vh;
+	}
+
+	&.content-alt {
+		background: $colourAlt;
+		color: $white;
+	}
+}

@@ -1,29 +1,6 @@
-@import 'utils/type';
-@import 'utils/vars';
-@import 'utils/normalise';
-@import 'utils/slick';
-@import 'utils/utils';
-
-@import 'modules/global';
-@import 'modules/landing';
-@import 'modules/main';
-@import 'modules/index';
-@import 'modules/editorials';
-@import 'modules/grid';
-@import 'modules/single';
-@import 'modules/nav';
-@import 'modules/footer';
-@import 'modules/scroll';
-@import 'modules/slider';
-@import 'modules/loading';
-@import 'modules/socialmedia';
-@import 'modules/parallax';
-@import 'modules/searchform';
-@import 'modules/forms';
-
-@import 'modules/woo';
-@import 'modules/shop';
-@import 'modules/product';
-@import 'modules/cart';
-@import 'modules/checkout';
-@import 'modules/order';
+@import 'utils/index';
+@import 'modules/index/index';
+@import 'modules/global/index';
+@import 'modules/shop/index';
+@import 'modules/editorials/index';
+@import 'modules/page/index';

@@ -69,6 +69,20 @@
 				justify-content: center;
 				align-items: center;
 
+        .item__image__double {
+          position: relative;
+          height: 100%;
+          width: 100%;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+          }
+        }
+
 				.img-fit {
 					object-fit: contain;
 					max-height: 100%;
@@ -121,117 +135,5 @@
     @media screen and (max-width: $mobile) {
       margin-top: $space;
     }
-  }
-}
-
-.inspector {
-  @extend .noselect;
-
-  width: 100%;
-  height: 100%;
-  position: relative;
-  //cursor: move;
-  overflow: hidden;
-  outline: 10px solid $white;
-
-  &:hover {
-    //cursor: move;
-  }
-
-  .inspector__mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    outline: 10px solid $white;
-
-    svg {
-      position: absolute;
-      height: 100%;
-      width: auto;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
-
-  .inspector__image {
-    position: absolute;
-  }
-}
-
-.index-overlay {
-  position: fixed;
-  top: 100vh;
-  opacity: 0;
-  width: 100vw;
-  z-index: $indexOverlay;
-  transition: top $transition;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  pointer-events: none;
-
-  .index-overlay__inner {
-    @extend .noselect;
-    background: $colourBackground;
-    width: 100vw;
-    min-height: 110vh;
-    margin-bottom: 110vh;
-
-    .index-overlay__item {
-      width: 100vw;
-      height: auto;
-      padding: 0;
-      margin: 0;
-
-      .item__image {
-        img, video {
-          width: 100vw;
-          height: auto;
-          margin: 0;
-          padding: 0;
-          display: block;
-        }
-      }
-
-      .item__text {
-        width: 100%;
-        background: $colourIndexBackground;
-        color: $colourIndexText;
-        padding: $space2;
-        padding-left: $space4;
-        padding-right: $space4;
-
-        @media screen and (max-width: $mobile) {
-          padding: $space;
-        }
-
-        .item__note {
-          padding-top: $space / 2;
-          padding-bottom: $space / 2;
-        }
-
-        .item__orderhere {
-          padding: $space;
-          border: 2px solid $colourIndexText;
-          display: inline-block;
-        }
-      }
-    }
-  }
-
-  &.active {
-    top: 0;
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  &.slide-up {
-    top: -100vh;
-    opacity: 1;
-    overflow: hidden;
-    pointer-events: none;
   }
 }

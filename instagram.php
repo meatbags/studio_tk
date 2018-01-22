@@ -1,7 +1,5 @@
-<!-- instagram grid -->
-
 <div class='featured-grid instagram-grid'>
   <div class='instagram-grid__inner grid'>
-    <!-- instas load here -->
+    <!-- insta ajax loads here -->
   </div>
 </div>

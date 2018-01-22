@@ -39,6 +39,10 @@ body, html {
 	}
 }
 
+input, button {
+  border-radius: 0;
+}
+
 ul {
 	list-style-type: none;
 	margin: 0;

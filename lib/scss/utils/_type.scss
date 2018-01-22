@@ -7,3 +7,136 @@
   font-family: SansSerifAlt;
   src: url(../fonts/Sans-Serif-Alt.woff);
 }
+
+$fontStackSansSerif: SansSerifAlt, sans-serif;
+$fontStackSerif: Lyon, serif;
+$fontStack: $fontStackSansSerif;
+$fontSizeTiny: 13px;
+$fontSizeSmall: 13px;
+$fontSize: 14px;
+$fontSize14: 14px;
+$fontSizeMediumSmall: 18px;
+$fontSizeMedium: 20px;
+$fontSizeMediumLarge: 28px;
+$fontSizeLarge: 50px;
+$fontSizeHuge: 70px;
+
+// mobile
+
+$fontSizeTinyMobile: 10px;
+$fontSizeSmallMobile: 13px;
+$fontSizeMobile: 18px;
+$fontSizeMediumSmallMobile: 12px;
+$fontSizeMediumMobile: 23px;
+$fontSizeLargeMobile: 30px;
+$fontSizeLargeTablet: 40px;
+$fontSizeHugeMobile: 50px;
+
+.text-14 {
+	font-size: $fontSize14;
+}
+
+.tablet-medium {
+	@media screen and (max-width: $tablet) {
+		font-size: $fontSizeLargeTablet;
+	}
+}
+
+.text-centre {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-paragraph {
+	font-size: 14px;
+	line-height: 1.45;
+	letter-spacing: 0.4px;
+}
+
+.text-black {
+	color: $black;
+}
+
+.text-tiny {
+	font-size: $fontSizeTiny;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeTinyMobile;
+	}
+}
+
+.text-small {
+	font-size: $fontSizeSmall;
+	line-height: 1.25;
+	letter-spacing: 0.5px;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeSmallMobile;
+	}
+}
+
+.text-normal {
+	font-size: $fontSize;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeMobile;
+	}
+}
+
+.text-mediumsmall {
+	font-size: $fontSizeMediumSmall;
+	line-height: 1.25;
+	letter-spacing: 0.5px;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeMediumSmallMobile;
+	}
+}
+
+.text-medium {
+	font-size: $fontSizeMedium;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeMediumMobile;
+	}
+}
+
+.text-large {
+	font-size: $fontSizeLarge;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeLargeMobile;
+	}
+}
+
+.text-huge {
+	font-size: $fontSizeHuge;
+	font-weight: bold;
+
+	@media screen and (max-width: $mobile) {
+		font-size: $fontSizeHugeMobile;
+	}
+}
+
+.font-serif {
+	font-family: $fontStackSerif;
+}
+
+.font-sans-serif {
+	font-family: $fontStackSansSerif;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}

@@ -1,8 +1,8 @@
 <?php
-  $page = get_page_by_title('landing');
-  $image = get_field('landing_page_image', $page->ID);
-  $mp4 = get_field('landing_page_video_mp4', $page->ID);
-  $webm = get_field('landing_page_video_webm', $page->ID);
+  $id = get_page_by_title('landing')->ID;
+  $image = get_field('landing_page_image', $id);
+  $mp4 = get_field('landing_page_video_mp4', $id);
+  $webm = get_field('landing_page_video_webm', $id);
 ?>
 
 <div class='landing hidden trigger' data-title='INDEX'>
@@ -10,12 +10,9 @@
     <?php if ($mp4 != '' || $webm != ''): ?>
       <video autoplay muted loop playsinline>
         <?php if ($mp4): ?>
-        <source src="<?php echo $mp4; ?>" type="video/mp4">
-        <?php
-          endif;
-          if ($webm):
-        ?>
-        <source src="<?php echo $webm; ?>" type="video/webm">
+          <source src="<?php echo $mp4; ?>" type="video/mp4">
+        <?php endif; if ($webm): ?>
+          <source src="<?php echo $webm; ?>" type="video/webm">
         <?php endif; ?>
       </video>
     <?php elseif ($image != ''): ?>

@@ -26,7 +26,7 @@
 }
 
 .height-100, .height-full {
-	height: 100vh;
+	height: 90vh;
 
 	@media screen and (max-width: $tablet) {
 		height: 50vh;
@@ -69,12 +69,6 @@
 	}
 }
 
-.tablet-medium {
-	@media screen and (max-width: $tablet) {
-		font-size: $fontSizeLargeTablet;
-	}
-}
-
 .transition {
 	transition: $transition;
 }
@@ -86,32 +80,6 @@
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
-}
-
-.text-14 {
-	font-size: $fontSize14;
-}
-
-.text-centre {
-	text-align: center;
-}
-
-.text-right {
-	text-align: right;
-}
-
-.text-left {
-	text-align: left;
-}
-
-.bold {
-	font-weight: bold;
-}
-
-.text-paragraph {
-	font-size: 14px;
-	line-height: 1.45;
-	letter-spacing: 0.4px;
 }
 
 .nowrap {
@@ -128,83 +96,6 @@
 
 .padding-half {
 	padding: $space / 2;
-}
-
-.text-black {
-	color: $black;
-}
-
-.text-tiny {
-	font-size: $fontSizeTiny;
-
-	@media screen and (max-width: $mobile) {
-		font-size: $fontSizeTinyMobile;
-	}
-}
-
-.text-small {
-	font-size: $fontSizeSmall;
-	line-height: 1.25;
-	letter-spacing: 0.5px;
-
-	@media screen and (max-width: $mobile) {
-		font-size: $fontSizeSmallMobile;
-	}
-}
-
-.text-normal {
-	font-size: $fontSize;
-
-	@media screen and (max-width: $mobile) {
-		font-size: $fontSizeMobile;
-	}
-}
-
-.text-mediumsmall {
-	font-size: $fontSizeMediumSmall;
-	line-height: 1.25;
-	letter-spacing: 0.5px;
-
-	@media screen and (max-width: $mobile) {
-		font-size: $fontSizeMediumSmallMobile;
-	}
-}
-
-.text-medium {
-	font-size: $fontSizeMedium;
-
-	@media screen and (max-width: $mobile) {
-		font-size: $fontSizeMediumMobile;
-	}
-}
-
-.text-large {
-	font-size: $fontSizeLarge;
-
-	@media screen and (max-width: $mobile) {
-		font-size: $fontSizeLargeMobile;
-	}
-}
-
-.text-huge {
-	font-size: $fontSizeHuge;
-	font-weight: bold;
-
-	@media screen and (max-width: $mobile) {
-		font-size: $fontSizeHugeMobile;
-	}
-}
-
-.font-serif {
-	font-family: $fontStackSerif;
-}
-
-.font-sans-serif {
-	font-family: $fontStackSansSerif;
-}
-
-.uppercase {
-	text-transform: uppercase;
 }
 
 .border-left {
@@ -229,35 +120,6 @@
 
 .padding-bottom {
 	padding-bottom: $space;
-}
-
-.reveal {
-	opacity: 0;
-
-	&.active {
-		opacity: 1;
-	}
-
-	&.display-none {
-		display: none;
-
-		&.active {
-			display: block;
-		}
-	}
-
-	&.inverted {
-		opacity: 1;
-		display: block;
-
-		&.active {
-			opacity: 0;
-
-			&.display-none {
-				display: none;
-			}
-		}
-	}
 }
 
 .clickable {

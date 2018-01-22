@@ -1,0 +1,74 @@
+.index-overlay {
+  position: fixed;
+  top: 100vh;
+  opacity: 0;
+  width: 100vw;
+  z-index: $indexOverlay;
+  transition: top $transition;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  pointer-events: none;
+
+  .index-overlay__inner {
+    @extend .noselect;
+    background: $colourBackground;
+    width: 100vw;
+    min-height: 110vh;
+    margin-bottom: 110vh;
+
+    .index-overlay__item {
+      width: 100vw;
+      height: auto;
+      padding: 0;
+      margin: 0;
+
+      .item__image {
+        img, video {
+          width: 100vw;
+          height: auto;
+          margin: 0;
+          padding: 0;
+          display: block;
+        }
+      }
+
+      .item__text {
+        width: 100%;
+        background: $colourIndexBackground;
+        color: $colourIndexText;
+        padding: $space2;
+        padding-left: $space4;
+        padding-right: $space4;
+
+        @media screen and (max-width: $mobile) {
+          padding: $space;
+        }
+
+        .item__note {
+          padding-top: $space / 2;
+          padding-bottom: $space / 2;
+        }
+
+        .item__orderhere {
+          padding: $space;
+          border: 2px solid $colourIndexText;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &.active {
+    top: 0;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &.slide-up {
+    top: -100vh;
+    opacity: 1;
+    overflow: hidden;
+    pointer-events: none;
+  }
+}

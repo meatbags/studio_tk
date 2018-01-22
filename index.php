@@ -1,9 +1,9 @@
 <?php
 	get_header();
-	get_template_part('home/landing');
+	get_template_part('index-video');
 	get_template_part('grid/index');
 	get_template_part('grid/editorials');
-	get_template_part('home/about');
-	get_template_part('grid/instagram');
+	get_template_part('index-about');
+	get_template_part('instagram');
 	get_footer();
 ?>
