@@ -79,6 +79,8 @@ function ajax_index(){
 add_action('wp_ajax_nopriv_ajax_index', 'ajax_index');
 add_action('wp_ajax_ajax_index', 'ajax_index');
 
+
+
 function teuber_setup()
 {
 	add_theme_support('title-tag');

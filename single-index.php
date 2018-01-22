@@ -8,22 +8,28 @@
 
 <div class='index-overlay__item'>
 <?php
+  // image sections
+
   foreach ($sections as $sec) :
     $imgSrc = $sec['image']['url'];
     $videoSrc = $sec['video_file'];
 
-    if ($videoSrc == ''): ?>
-      <div class='item__image'>
-        <img class='to-load' src='<?php echo $imgSrc; ?>' />
-      </div>
-    <?php else: ?>
-      <div class='item__image'>
-        <video loop autoplay playsinline muted>
-          <source src="<?php echo $videoSrc; ?>" type="video/mp4">
-        </video>
-      </div>
+    if ($videoSrc != '' || $imgSrc != '') :
+      if ($videoSrc == ''): ?>
+        <div class='item__image'>
+          <img class='to-load' src='<?php echo $imgSrc; ?>' />
+        </div>
+      <?php else: ?>
+        <div class='item__image'>
+          <video loop autoplay playsinline muted>
+            <source src="<?php echo $videoSrc; ?>" type="video/mp4">
+          </video>
+        </div>
   <?php endif;
+      endif;
     endforeach;
+
+    // description
   ?>
 
   <div class='item__text'>
