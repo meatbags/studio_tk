@@ -27,3 +27,4 @@
 <div class="content">
 	<div class="wrapper">
 		<?php get_template_part('nav'); ?>
+		<?php get_template_part('menu'); ?>

@@ -1,6 +1,5 @@
 .nav {
 	@extend .noselect;
-	height: $sizeNav;
 	width: 100%;
 	z-index: $indexNav;
 	position: fixed;
@@ -9,9 +8,9 @@
 	.nav__list {
 		width: 100%;
 		height: 100%;
-		padding-top: $space;
-		padding-left: $space3;
-		padding-right: $space3;
+		//padding-top: $space;
+		padding-left: $space * 2;
+		padding-right: $space * 2;
 
 		@media screen and (max-width: $mobile) {
 			padding-left: $space;
@@ -20,12 +19,14 @@
 
 		.nav__list__item {
 			display: inline-block;
+			padding: $space;
 
 			a {
 				display: flex;
 
 				&:hover {
 					opacity: 0.6;
+					text-decoration: underline;
 				}
 			}
 
@@ -54,10 +55,18 @@
 	&.inverted {
 		color: $colourBackground;
 	}
+
+	.nav__page-title-alt {
+		padding-top: $space;
+	}
 }
 
 .nav__filter, .nav__cart {
 	transition: $transitionFast;
+
+	&:hover {
+		text-decoration: underline;
+	}
 
 	&.active {
 		color: $black;
